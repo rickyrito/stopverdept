@@ -70,6 +70,8 @@ Para ver localmente: `python3 -m http.server` na raiz e abrir http://localhost:8
 - A secção Preços é propositadamente divertida ("A parte que ninguém gosta"):
   Preçómetro animado (ponteiro de Ai! até Justo) e serviços como luzes do painel
   que piscam ao entrar no ecrã. Respeita `prefers-reduced-motion`.
+- Marcas (Bosch, Liqui Moly, Osram, Michelin, Monroe) aparecem só como nome em
+  texto em `#parceiros`. Não usar logótipos oficiais sem autorização confirmada.
 - Sem formulários: o GitHub Pages não processa envios. Usar `tel:` e `mailto:`.
 
 ## Verificar antes de publicar

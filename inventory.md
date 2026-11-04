@@ -29,7 +29,19 @@ Legenda da origem: **Webnode** = veio do site antigo `stopverde.webnode.pt` ·
 | Serviços | `#servicos` | 8 serviços (lista abaixo) + "…e muito mais!" | Nomes: Webnode · Descrições: Novo | Validar descrições |
 | Faixa | — | "Tem um problema com o seu carro?" + telefone | Novo | ✅ |
 | Preços | `#precos` | "A parte que ninguém gosta": Preçómetro animado + luzes do painel (Mudanças de óleo, Revisões, Mão de obra/hora — todos "Sob consulta") + botões WhatsApp/Ligar | Itens: Webnode · Textos e animação: Novo | ⏳ Faltam preços · validar textos |
-| Seguradoras e Fornecedores | `#parceiros` | Seguradoras, Fornecedores, Parcerias — "Em construção" | Webnode | ⏳ Faltam listas |
+| Seguradoras e Fornecedores | `#parceiros` | Seguradoras e Parcerias — "Em construção" · Fornecedores — remete para as marcas · Faixa "Marcas com que trabalhamos" | Webnode + Cliente | ⏳ Faltam seguradoras e parcerias |
+
+## Marcas com que trabalham
+
+Indicadas pelo cliente. Mostradas como nome em texto (sem logótipos oficiais).
+
+| Marca | Categoria no site |
+|---|---|
+| Bosch | Peças auto |
+| Liqui Moly | Óleos |
+| Osram | Iluminação |
+| Michelin | Pneus |
+| Monroe | Amortecedores |
 | Contactos | `#contactos` | Telefone, morada, email, Facebook, horário, mapa Google | Webnode | ✅ |
 
 ## Serviços
@@ -61,7 +73,9 @@ histórico do Git (commit `6adcb2a`).
 
 - [ ] Preços de revisões, mudanças de óleo e mão de obra/hora (ou confirmar "Sob consulta")
 - [ ] Lista de seguradoras com quem trabalham
-- [ ] Lista de fornecedores e parcerias (com autorização para usar os logótipos)
+- [ ] Lista de parcerias
+- [ ] Autorização para usar os logótipos oficiais das marcas (Bosch, Liqui Moly, Osram, Michelin, Monroe) — ex.: material de distribuidor/oficina aderente
+- [ ] Confirmar a categoria da Bosch (está "Peças auto")
 - [ ] Fotografias reais da oficina, da equipa e de trabalhos feitos (para o topo e as secções)
 - [ ] Validar os textos marcados como **Novo**
 - [ ] Confirmar se abrem ao domingo ou em feriados

@@ -212,6 +212,22 @@
       letter-spacing: .18em; text-transform: uppercase; color: var(--green); border: 1px solid var(--green); padding: 5px 12px;
     }
 
+    .brands-title {
+      text-align: center; margin: 56px 0 22px; color: #fff;
+      font-size: .95rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase;
+    }
+    .brands { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .brand-tile {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+      background: var(--dark-2); border: 1px solid #2a2f3a; padding: 26px 12px; text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+    .brand-tile:hover { border-color: var(--green); transform: translateY(-3px); }
+    .brand-name { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.35rem; color: #fff; line-height: 1.1; }
+    .brand-cat { font-size: .72rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+    @media (max-width: 1000px) { .brands { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 560px) { .brands { grid-template-columns: repeat(2, 1fr); } }
+
     /* Contact */
     .contact { display: grid; grid-template-columns: 1fr 1.25fr; gap: 0; box-shadow: 0 12px 40px rgba(0,0,0,.08); }
     .contact-info { background: var(--dark); color: #c3c6cc; padding: 44px 38px; display: grid; gap: 28px; align-content: start; }
@@ -455,8 +471,7 @@
         </div>
         <div class="partner">
           <h3>Fornecedores</h3>
-          <p>Os fornecedores de peças e materiais que nos acompanham.</p>
-          <span class="soon">Em construção</span>
+          <p>Peças, óleos, pneus e iluminação de marcas em que confiamos — veja abaixo.</p>
         </div>
         <div class="partner">
           <h3>Parcerias</h3>
@@ -464,6 +479,15 @@
           <span class="soon">Em construção</span>
         </div>
       </div>
+
+      <h3 class="brands-title">Marcas com que trabalhamos</h3>
+      <ul class="brands">
+        <li class="brand-tile"><span class="brand-name">Bosch</span><span class="brand-cat">Peças auto</span></li>
+        <li class="brand-tile"><span class="brand-name">Liqui Moly</span><span class="brand-cat">Óleos</span></li>
+        <li class="brand-tile"><span class="brand-name">Osram</span><span class="brand-cat">Iluminação</span></li>
+        <li class="brand-tile"><span class="brand-name">Michelin</span><span class="brand-cat">Pneus</span></li>
+        <li class="brand-tile"><span class="brand-name">Monroe</span><span class="brand-cat">Amortecedores</span></li>
+      </ul>
     </div>
   </section>
 
