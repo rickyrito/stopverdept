@@ -33,18 +33,17 @@ Legenda da origem: **Webnode** = veio do site antigo `stopverde.webnode.pt` ·
 
 ## Seguradoras e parcerias
 
-Indicadas pelo cliente. Cada uma tem um símbolo genérico desenhado para o site
-(não é o logótipo oficial).
+Indicadas pelo cliente. Mostradas com o logótipo oficial.
 
-| Nome | Onde aparece | Símbolo |
+| Nome | Onde aparece | Logótipo |
 |---|---|---|
-| Fidelidade | Seguradoras | Guarda-chuva |
-| Allianz Auto | Seguradoras | Guarda-chuva |
-| DECO PROteste | Parcerias | Selo com visto |
+| Fidelidade | Seguradoras | `assets/marcas/fidelidade.png` (site oficial) |
+| Allianz Auto | Seguradoras | `assets/marcas/allianz.svg` (Wikimedia) |
+| DECO PROteste | Parcerias | `assets/marcas/deco.svg` (site oficial) |
 
 ## Marcas com que trabalham
 
-Indicadas pelo cliente. Mostradas como nome em texto (sem logótipos oficiais).
+Indicadas pelo cliente. Logótipos oficiais em `assets/marcas/` (Wikimedia Commons).
 
 | Marca | Categoria no site |
 |---|---|
@@ -85,10 +84,16 @@ histórico do Git (commit `6adcb2a`).
 - [ ] Preços de revisões, mudanças de óleo e mão de obra/hora (ou confirmar "Sob consulta")
 - [ ] Lista de seguradoras com quem trabalham
 - [ ] Confirmar a relação com a DECO PROteste (o que se pode dizer publicamente)
-- [ ] Autorização para usar os logótipos oficiais das marcas (Fidelidade, Allianz, DECO PROteste, Bosch, Liqui Moly, Osram, Michelin, Monroe) — ex.: material de distribuidor/oficina aderente
+- [ ] Confirmar autorização para os logótipos oficiais (já estão no site, a pedido do cliente) das marcas (Fidelidade, Allianz, DECO PROteste, Bosch, Liqui Moly, Osram, Michelin, Monroe) — ex.: material de distribuidor/oficina aderente
 - [ ] Confirmar a categoria da Bosch (está "Peças auto")
 - [ ] Fotografias reais da oficina, da equipa e de trabalhos feitos (para o topo e as secções)
 - [ ] Validar os textos marcados como **Novo**
 - [ ] Confirmar se abrem ao domingo ou em feriados
 - [ ] Domínio próprio (ex.: `stopverde.pt`) — configurar no GitHub Pages quando existir
 - [ ] Desativar ou redirecionar o site antigo `stopverde.webnode.pt` quando o novo for o oficial
+
+## Funcionalidades
+
+- Site em **português e inglês** (botão PT/EN no cabeçalho; `?lang=en` abre em inglês). Textos em inglês: Novo — validar.
+- **Consentimento de cookies** (banner + preferências; Necessário / Funcional). O mapa da Google só aparece com consentimento.
+- **Responsivo** testado de 320px a 1280px, nas duas línguas.

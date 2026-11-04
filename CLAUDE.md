@@ -73,10 +73,21 @@ Para ver localmente: `python3 -m http.server` na raiz e abrir http://localhost:8
 - Marcas (Bosch, Liqui Moly, Osram, Michelin, Monroe), seguradoras (Fidelidade,
   Allianz Auto) e parcerias (DECO PROteste) aparecem como nome em texto em
   `#parceiros`, as últimas com símbolos genéricos (`.partner-list`). Não usar logótipos oficiais sem autorização confirmada.
+- **Bilingue PT/EN:** o português está no HTML; o inglês está no objeto `EN` do
+  `<script>`, por chave `data-i18n` (texto) ou `data-i18n-attr="atributo:chave"`.
+  Todo o texto novo precisa das duas línguas. Língua inicial: `?lang=` → escolha
+  guardada (`stopverde-lang`) → língua do browser.
+- **Cookies:** banner + janela "Personalizar as preferências de consentimento"
+  (inspirado em sodicentro.pt/CookieYes). Categorias: Necessário (sempre ativo) e
+  Funcional (mapa da Google). O mapa só carrega com consentimento funcional
+  (`iframe[data-src]`). Escolha em `localStorage` `stopverde-consent`. Se o site
+  passar a usar outro serviço externo, acrescentar a categoria e bloqueá-lo também.
 - Sem formulários: o GitHub Pages não processa envios. Usar `tel:` e `mailto:`.
 
 ## Verificar antes de publicar
 
-- Testar a largura de telemóvel (menu ☰ abaixo de 820px; sem scroll horizontal).
+- Responsivo: menu ☰ abaixo de 1080px; quebras em 1000/820/560/360px e telemóvel
+  na horizontal. Testar 320–1280px nas duas línguas sem scroll horizontal (o Chrome
+  headless não abre janelas < ~500px: testar dentro de um iframe com a largura certa).
 - Ícones novos: desenhar em SVG e confirmar o aspeto (por ex. `qlmanage -t -s 300 ficheiro.svg`).
 - Depois do push, confirmar o build e abrir o site publicado.

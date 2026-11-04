@@ -2,10 +2,13 @@
 <html lang="pt">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161922">
   <title>Stopverde · Serviços Auto na Pontinha</title>
   <meta name="description" content="Stopverde – oficina multimarcas na Pontinha, Odivelas. Revisões, chapa e pintura, correias de distribuição, embraiagens, mudanças de óleo e inspeções.">
   <link rel="icon" href="assets/stopverde.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="pt" href="https://rickyrito.github.io/stopverdept/">
+  <link rel="alternate" hreflang="en" href="https://rickyrito.github.io/stopverdept/?lang=en">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -21,24 +24,29 @@
       --muted: #7e8186;
       --line: #e6e7e9;
       --light: #f2f2f2;
+      --header-h: 74px;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-    body { margin: 0; font-family: "Roboto", system-ui, sans-serif; color: var(--text); background: #fff; line-height: 1.65; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 6px); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body { margin: 0; font-family: "Roboto", system-ui, sans-serif; color: var(--text); background: #fff; line-height: 1.65; overflow-x: hidden; }
+    img, svg, iframe { max-width: 100%; }
     a { color: inherit; }
-    h1, h2, h3, h4 { font-family: "Poppins", sans-serif; margin: 0; color: var(--black); }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+    h1, h2, h3, h4 { font-family: "Poppins", sans-serif; margin: 0; color: var(--black); overflow-wrap: break-word; hyphens: auto; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 max(20px, env(safe-area-inset-left)) 0 max(20px, env(safe-area-inset-right)); }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
 
     /* Top bar */
     .topbar { background: var(--black); color: #9e9fa1; font-size: .85rem; }
-    .topbar .wrap { display: flex; justify-content: space-between; gap: 12px; padding-top: 9px; padding-bottom: 9px; flex-wrap: wrap; }
+    .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 6px 14px; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
     .topbar strong { color: #fff; font-weight: 500; }
-    .topbar a { color: var(--green); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
+    .topbar a { color: var(--green); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
     .topbar-links { display: flex; gap: 18px; }
 
     /* WhatsApp flutuante */
     .wa-float {
-      position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 40;
+      position: fixed; z-index: 40;
+      right: max(1.5rem, env(safe-area-inset-right)); bottom: max(1.5rem, env(safe-area-inset-bottom));
       display: flex; align-items: center; gap: .75rem;
       background: #25D366; color: var(--black); text-decoration: none;
       padding: .625rem 1.25rem .625rem .625rem;
@@ -54,23 +62,34 @@
 
     /* Header */
     header { position: sticky; top: 0; z-index: 20; background: var(--dark); border-bottom: 3px solid var(--green); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 74px; }
-    .brand { text-decoration: none; display: flex; align-items: center; gap: 12px; line-height: 1; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: var(--header-h); }
+    .brand { text-decoration: none; display: flex; align-items: center; gap: 12px; line-height: 1; min-width: 0; }
     .brand .sign { width: 48px; height: 48px; flex: none; }
     .brand .words { display: flex; flex-direction: column; }
-    .brand .name { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.75rem; letter-spacing: .01em; }
+    .brand .name { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.75rem; letter-spacing: .01em; white-space: nowrap; }
     .brand .stop { color: #fff; }
-    .hero-sign { display: block; width: 132px; height: 132px; margin: 0 auto 26px; filter: drop-shadow(0 12px 30px rgba(31,191,67,.35)); }
     .brand .verde { color: var(--green); }
-    .brand .sub { color: #9e9fa1; font-size: .62rem; letter-spacing: .32em; margin-top: 4px; font-weight: 500; }
-    .nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+    .brand .sub { color: #9e9fa1; font-size: .62rem; letter-spacing: .32em; margin-top: 4px; font-weight: 500; white-space: nowrap; }
+    .nav-right { display: flex; align-items: center; gap: 22px; }
+    .nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
     .nav ul a {
       text-decoration: none; color: #fff; font-family: "Poppins", sans-serif;
-      font-size: .82rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+      font-size: .8rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap;
       padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color .15s, color .15s;
     }
     .nav ul a:hover { color: var(--green); border-bottom-color: var(--green); }
-    .menu-btn { display: none; background: none; border: 0; color: #fff; font-size: 1.7rem; cursor: pointer; }
+    .lang-btn {
+      display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 12px;
+      background: transparent; color: #fff; border: 1.5px solid #3a4050; border-radius: 3px; cursor: pointer;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: .8rem; letter-spacing: .08em;
+      transition: border-color .15s, color .15s;
+    }
+    .lang-btn:hover { border-color: var(--green); color: var(--green); }
+    .lang-btn svg { width: 16px; height: 16px; }
+    .menu-btn {
+      display: none; width: 44px; height: 44px; background: none; border: 0; color: #fff;
+      font-size: 1.7rem; line-height: 1; cursor: pointer; padding: 0;
+    }
 
     /* Hero */
     .hero {
@@ -80,36 +99,34 @@
         repeating-linear-gradient(135deg, #1b1f28 0 22px, #171a22 22px 44px);
       padding: 120px 0 130px;
     }
-    .hero::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
-      background: var(--green);
-    }
+    .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--green); }
+    .hero-sign { display: block; width: 132px; height: 132px; margin: 0 auto 26px; filter: drop-shadow(0 12px 30px rgba(31,191,67,.35)); }
     .eyebrow {
       font-family: "Poppins", sans-serif; font-size: .9rem; font-weight: 600;
       letter-spacing: .3em; text-transform: uppercase; color: var(--green); margin-bottom: 14px;
     }
     .hero h1 {
       color: #fff; font-weight: 800; text-transform: uppercase;
-      font-size: clamp(2.4rem, 6.5vw, 5rem); line-height: 1.02; max-width: 900px; margin: 0 auto;
+      font-size: clamp(2.1rem, 6.5vw, 5rem); line-height: 1.04; max-width: 900px; margin: 0 auto;
     }
     .hero h1 span { color: var(--green); }
     .hero p { color: #c3c6cc; font-size: 1.12rem; max-width: 620px; margin: 22px auto 0; }
     .cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
     .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: "Poppins", sans-serif; font-weight: 600; font-size: .9rem;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px;
+      font-family: "Poppins", sans-serif; font-weight: 600; font-size: .9rem; text-align: center;
       letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
-      padding: 15px 30px; border-radius: 3px; transition: background .15s, color .15s, border-color .15s;
+      padding: 13px 28px; border-radius: 3px; transition: background .15s, color .15s, border-color .15s;
     }
     .btn-green { background: var(--green); color: #fff; }
     .btn-green:hover { background: var(--green-dark); }
-    .btn-outline { border: 2px solid #fff; color: #fff; padding: 13px 28px; }
+    .btn-outline { border: 2px solid #fff; color: #fff; padding: 11px 26px; }
     .btn-outline:hover { background: #fff; color: var(--black); }
 
     /* Sections */
     section { padding: 96px 0; }
     .head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
-    .head h2 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; text-transform: uppercase; line-height: 1.1; }
+    .head h2 { font-size: clamp(1.75rem, 4.5vw, 3rem); font-weight: 800; text-transform: uppercase; line-height: 1.1; }
     .head p { color: var(--muted); margin: 16px 0 0; }
     .bar { width: 60px; height: 4px; background: var(--green); margin: 20px auto 0; }
     .dark { background: var(--dark); color: #c3c6cc; }
@@ -120,7 +137,7 @@
     .about-statement {
       text-align: center; max-width: 920px; margin: 0 auto;
       font-family: "Poppins", sans-serif; font-weight: 600; color: #fff;
-      font-size: clamp(1.25rem, 2.6vw, 1.8rem); line-height: 1.5;
+      font-size: clamp(1.2rem, 2.6vw, 1.8rem); line-height: 1.5;
     }
     .about-statement b { color: var(--green); font-weight: 800; }
     .about-text { max-width: 760px; margin: 28px auto 0; text-align: center; font-size: 1.05rem; }
@@ -132,9 +149,9 @@
     .value p { margin: 6px 0 0; color: #9e9fa1; }
 
     /* Services */
-    .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .services { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
     .service {
-      padding: 40px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      padding: 40px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
       text-align: center; transition: background .2s, color .2s;
     }
     .service .ic {
@@ -154,7 +171,7 @@
     /* Problem band */
     .band { background: var(--green); color: #fff; padding: 56px 0; }
     .band .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-    .band h2 { color: #fff; font-weight: 800; text-transform: uppercase; font-size: clamp(1.5rem, 3.4vw, 2.3rem); line-height: 1.15; }
+    .band h2 { color: #fff; font-weight: 800; text-transform: uppercase; font-size: clamp(1.4rem, 3.4vw, 2.3rem); line-height: 1.15; }
     .band p { margin: 6px 0 0; font-size: 1.05rem; color: #eafbe9; }
     .band .btn { background: var(--black); color: #fff; }
     .band .btn:hover { background: #fff; color: var(--black); }
@@ -164,6 +181,7 @@
     .gauge-card { background: #fff; border-top: 4px solid var(--green); box-shadow: 0 12px 40px rgba(0,0,0,.06); padding: 34px 26px 28px; text-align: center; }
     .gauge { display: block; width: 100%; max-width: 340px; margin: 0 auto; overflow: visible; }
     .gauge text { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 13px; fill: var(--black); }
+    .gauge text.fair { fill: var(--green-dark); }
     .needle { transform-box: view-box; transform-origin: 100px 100px; transform: rotate(-85deg); }
     .gauge.on .needle { animation: needle 2.4s ease-out forwards; }
     @keyframes needle {
@@ -207,87 +225,243 @@
     .partner::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--green); }
     .partner h3 { text-transform: uppercase; font-size: 1.3rem; font-weight: 800; }
     .partner p { margin: 12px 0 0; }
-    .soon {
-      display: inline-block; margin-top: 20px; font-family: "Poppins", sans-serif; font-size: .72rem; font-weight: 600;
-      letter-spacing: .18em; text-transform: uppercase; color: var(--green); border: 1px solid var(--green); padding: 5px 12px;
-    }
-
     .partner-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px; }
     .partner-list li {
-      display: flex; align-items: center; gap: 14px;
-      background: rgba(255,255,255,.04); border: 1px solid #2a2f3a; padding: 12px 14px;
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(255,255,255,.04); border: 1px solid #2a2f3a; padding: 10px;
       transition: border-color .2s;
     }
     .partner-list li:hover { border-color: var(--green); }
-    .pl-ic {
-      width: 42px; height: 42px; flex: none; border-radius: 50%; display: grid; place-items: center;
-      background: var(--green); color: #fff;
+    .logo-plate {
+      flex: none; width: 132px; height: 56px; background: #fff; border-radius: 3px;
+      display: grid; place-items: center; padding: 8px 12px;
     }
-    .pl-ic svg { width: 22px; height: 22px; }
-    .partner-list b { display: block; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; line-height: 1.2; }
+    .logo-plate img { max-width: 100%; max-height: 38px; width: auto; height: auto; object-fit: contain; }
     .partner-list small { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--green); }
     .brands-title {
       text-align: center; margin: 56px 0 22px; color: #fff;
       font-size: .95rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase;
     }
-    .brands { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .brands { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
     .brand-tile {
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
-      background: var(--dark-2); border: 1px solid #2a2f3a; padding: 26px 12px; text-align: center;
+      flex: 1 1 170px; max-width: 220px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+      background: #fff; border: 2px solid transparent; padding: 22px 14px 16px; text-align: center;
       transition: border-color .2s, transform .2s;
     }
     .brand-tile:hover { border-color: var(--green); transform: translateY(-3px); }
-    .brand-name { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.35rem; color: #fff; line-height: 1.1; }
-    .brand-cat { font-size: .72rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
-    @media (max-width: 1000px) { .brands { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 560px) { .brands { grid-template-columns: repeat(2, 1fr); } }
+    .brand-tile img { height: 46px; width: auto; max-width: 100%; object-fit: contain; }
+    .brand-tile .tall { height: 64px; }
+    .brand-cat { font-size: .7rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .logos-note { text-align: center; font-size: .75rem; color: #7e8186; margin: 18px 0 0; }
 
     /* Contact */
-    .contact { display: grid; grid-template-columns: 1fr 1.25fr; gap: 0; box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+    .contact { display: grid; grid-template-columns: 1fr 1.25fr; box-shadow: 0 12px 40px rgba(0,0,0,.08); }
     .contact-info { background: var(--dark); color: #c3c6cc; padding: 44px 38px; display: grid; gap: 28px; align-content: start; }
     .contact-info h3 { color: #fff; text-transform: uppercase; font-size: .95rem; letter-spacing: .1em; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
     .contact-info h3 svg { width: 20px; height: 20px; color: var(--green); flex: none; }
     .contact-info p { margin: 0; }
+    .contact-info .mobile { margin-top: 8px; }
     .contact-info a { color: #fff; text-decoration: none; }
     .contact-info a:hover { color: var(--green); }
     .big-phone { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.8rem; color: #fff; }
     .hours { width: 100%; border-collapse: collapse; }
     .hours td { padding: 5px 0; border-bottom: 1px solid #2a2f3a; }
-    .hours td:last-child { text-align: right; color: #fff; }
+    .hours td:last-child { text-align: right; color: #fff; white-space: nowrap; padding-left: 12px; }
     .map { min-height: 440px; background: var(--light); }
     .map iframe { width: 100%; height: 100%; min-height: 440px; border: 0; display: block; }
 
-    footer { background: var(--black); color: #7e8186; font-size: .88rem; padding: 34px 0 96px; }
+    footer { background: var(--black); color: #7e8186; font-size: .88rem; padding: 34px 0 calc(96px + env(safe-area-inset-bottom)); }
     footer .wrap { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: center; }
+    footer .brand .sign { width: 36px; height: 36px; }
     footer .brand .name { font-size: 1.3rem; }
     footer a { text-decoration: none; }
     footer a:hover { color: #fff; }
+
+    footer .cookie-link { background: none; border: 0; padding: 0; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
+    footer .cookie-link:hover { color: #fff; }
+
+    /* Mapa só com consentimento */
+    .map { display: flex; }
+    .map iframe[hidden] { display: none; }
+    .map-ph {
+      flex: 1; display: grid; place-items: center; text-align: center; padding: 30px 20px;
+      background: repeating-linear-gradient(135deg, #eceef1 0 18px, #e4e7eb 18px 36px);
+    }
+    .map-ph svg { width: 44px; height: 44px; color: var(--green-dark); }
+    .map-ph p { max-width: 380px; margin: 10px auto 18px; }
+    .map-ph .row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .map.loaded .map-ph { display: none; }
+
+    /* Consentimento de cookies */
+    .cbtn {
+      min-height: 46px; padding: 10px 20px; border-radius: 3px; cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center; text-align: center;
+      font-family: "Poppins", sans-serif; font-weight: 600; font-size: .88rem; border: 2px solid var(--green);
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .cbtn-solid { background: var(--green); color: #fff; }
+    .cbtn-solid:hover { background: var(--green-dark); border-color: var(--green-dark); }
+    .cbtn-ghost { background: #fff; color: var(--green-dark); }
+    .cbtn-ghost:hover { background: #eafbe9; }
+    .consent-banner {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: #fff; color: var(--text);
+      border-top: 4px solid var(--green); box-shadow: 0 -12px 40px rgba(0,0,0,.25);
+      padding: 20px 0 calc(20px + env(safe-area-inset-bottom));
+    }
+    .consent-banner .wrap { display: flex; align-items: center; justify-content: space-between; gap: 18px 32px; flex-wrap: wrap; }
+    .consent-banner h2 { font-size: 1.1rem; margin-bottom: 4px; }
+    .consent-banner p { margin: 0; font-size: .92rem; max-width: 700px; }
+    .consent-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .consent-modal {
+      position: fixed; inset: 0; z-index: 70; background: rgba(14,14,15,.6);
+      display: grid; place-items: center; padding: 16px;
+    }
+    .consent-banner[hidden], .consent-modal[hidden] { display: none; }
+    .cm-box {
+      background: #fff; color: var(--text); width: 100%; max-width: 820px;
+      max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px);
+      display: flex; flex-direction: column; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.4);
+    }
+    .cm-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 24px; border-bottom: 1px solid var(--line); }
+    .cm-head h2 { font-size: 1.25rem; line-height: 1.25; }
+    .cm-close { flex: none; width: 44px; height: 44px; background: #fff; border: 1px solid var(--line); font-size: 1.3rem; color: var(--muted); cursor: pointer; }
+    .cm-close:hover { border-color: var(--green); color: var(--black); }
+    .cm-body { padding: 20px 24px 8px; overflow-y: auto; overscroll-behavior: contain; }
+    .cm-body > p { margin: 0 0 12px; }
+    .cm-body a, .linkbtn { color: var(--green-dark); }
+    .linkbtn { background: none; border: 0; padding: 0; font: inherit; text-decoration: underline; cursor: pointer; }
+    .cm-cat { border-top: 1px solid var(--line); padding: 16px 0; }
+    .cm-cat-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .cm-cat-toggle {
+      display: flex; align-items: center; gap: 10px; background: none; border: 0; padding: 6px 0; cursor: pointer;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--black); text-align: left;
+    }
+    .cm-cat-toggle svg { width: 18px; height: 18px; flex: none; transition: transform .2s; }
+    .cm-cat-toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
+    .cm-cat > p { margin: 8px 0 0 28px; }
+    .cm-detail { margin: 12px 0 0 28px; font-size: .85rem; overflow-x: auto; }
+    .cm-detail[hidden] { display: none; }
+    .cm-detail table { width: 100%; border-collapse: collapse; background: #f7f7f8; }
+    .cm-detail th, .cm-detail td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .cm-detail th { font-weight: 600; color: var(--black); white-space: nowrap; }
+    .always { color: var(--green-dark); font-family: "Poppins", sans-serif; font-weight: 600; font-size: .92rem; white-space: nowrap; }
+    .switch { -webkit-appearance: none; appearance: none; flex: none; width: 52px; height: 30px; margin: 0; border-radius: 30px; background: #c9ccd1; position: relative; cursor: pointer; transition: background .2s; }
+    .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .2s; }
+    .switch:checked { background: var(--green); }
+    .switch:checked::after { transform: translateX(22px); }
+    .cm-foot { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 10px; padding: 16px 24px calc(16px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: #f7f7f8; }
+    body.consent-open .wa-float { display: none; }
+    body.modal-open { overflow: hidden; }
+
+    /* ---------- Responsivo ---------- */
+
+    /* Portáteis pequenos e tablets na horizontal */
+    @media (max-width: 1180px) {
+      .nav ul { gap: 18px; }
+      .nav ul a { font-size: .74rem; letter-spacing: .03em; }
+    }
+
+    /* Tablets: menu passa a ☰ */
+    @media (max-width: 1080px) {
+      .menu-btn { display: block; }
+      .nav-right { gap: 8px; }
+      .nav ul {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; gap: 0; background: var(--dark); border-bottom: 3px solid var(--green);
+        max-height: calc(100vh - var(--header-h)); max-height: calc(100dvh - var(--header-h)); overflow-y: auto;
+        box-shadow: 0 20px 40px rgba(0,0,0,.35);
+      }
+      .nav ul.open { display: flex; }
+      .nav ul a { display: block; padding: 15px 20px; border-bottom: 1px solid #2a2f3a; font-size: .85rem; }
+    }
 
     @media (max-width: 1000px) {
       .services { grid-template-columns: repeat(2, 1fr); }
       .partners { grid-template-columns: 1fr; }
       .prices-fun { grid-template-columns: 1fr; }
       .contact { grid-template-columns: 1fr; }
+      .map, .map iframe { min-height: 340px; }
     }
+
+    /* Telemóveis grandes / tablets pequenos */
     @media (max-width: 820px) {
-      .menu-btn { display: block; }
-      .nav ul {
-        display: none; position: absolute; top: 74px; left: 0; right: 0;
-        flex-direction: column; gap: 0; background: var(--dark); border-bottom: 3px solid var(--green);
-      }
-      .nav ul.open { display: flex; }
-      .nav ul a { display: block; padding: 14px 20px; border-bottom: 1px solid #2a2f3a; }
       section { padding: 64px 0; }
-      .hero { padding: 80px 0 90px; }
-      .wrap { padding: 0 16px; }
+      .head { margin-bottom: 40px; }
+      .hero { padding: 72px 0 84px; }
+      .hero-sign { width: 104px; height: 104px; margin-bottom: 20px; }
       .topbar .hide-sm { display: none; }
+      .values { grid-template-columns: 1fr; }
+      .value { display: grid; grid-template-columns: 72px 1fr; text-align: left; align-items: center; gap: 4px 18px; padding: 22px 20px; }
+      .value img { width: 72px; height: 72px; margin: 0; grid-row: span 2; }
+      .value p { margin: 0; }
     }
+
+    /* Telemóveis */
     @media (max-width: 560px) {
-      .services, .values { grid-template-columns: 1fr; }
-      .contact-info { padding: 32px 22px; }
-      .light { flex-wrap: wrap; gap: 14px; padding: 18px; }
-      .light .val { margin-left: 72px; }
-      .band .wrap { flex-direction: column; align-items: flex-start; }
+      :root { --header-h: 64px; }
+      .wrap { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+      .topbar .wrap { justify-content: center; }
+      .topbar .tb-label { display: none; }
+      .brand { gap: 9px; }
+      .brand .sign { width: 38px; height: 38px; }
+      .brand .name { font-size: 1.3rem; }
+      .brand .sub { display: none; }
+      .lang-btn { padding: 0 10px; }
+      .eyebrow { font-size: .75rem; letter-spacing: .2em; }
+      .hero p { font-size: 1rem; }
+      .cta { flex-direction: column; align-items: stretch; }
+      .cta .btn { width: 100%; }
+      .services { grid-template-columns: 1fr; }
+      .service { display: grid; grid-template-columns: 56px 1fr; text-align: left; gap: 2px 16px; padding: 22px 18px; align-items: center; }
+      .service .ic { width: 56px; height: 56px; margin: 0; grid-row: span 2; }
+      .service .ic svg { width: 26px; height: 26px; }
+      .service p { margin: 0; }
+      .band { padding: 44px 0; }
+      .band .wrap { flex-direction: column; align-items: stretch; text-align: center; }
+      .gauge-card { padding: 26px 16px 22px; }
+      .light { flex-wrap: wrap; gap: 10px 14px; padding: 16px; }
+      .lamp { width: 46px; height: 46px; }
+      .lamp svg { width: 22px; height: 22px; }
+      .light .val { margin-left: 60px; }
+      .partner { padding: 32px 18px 22px; }
+      .logo-plate { width: 112px; height: 50px; }
+      .brands { gap: 10px; }
+      .brand-tile { flex: 1 1 calc(50% - 5px); max-width: none; padding: 18px 10px 12px; }
+      .brand-tile img { height: 38px; }
+      .brand-tile .tall { height: 54px; }
+      .contact-info { padding: 30px 20px; }
+      .big-phone { font-size: 1.6rem; }
+      .map, .map iframe { min-height: 280px; }
+      .wa-float { right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); padding: .5rem 1rem .5rem .5rem; gap: .6rem; }
+      .wa-float-badge { width: 2rem; height: 2rem; }
+      footer { font-size: .82rem; }
+      footer .wrap { flex-direction: column; text-align: center; }
+      .consent-banner { padding-top: 16px; }
+      .consent-actions { width: 100%; }
+      .consent-actions .cbtn { flex: 1 1 100%; }
+      .consent-modal { padding: 0; place-items: end stretch; }
+      .cm-box { max-height: 92vh; max-height: 92dvh; border-radius: 10px 10px 0 0; }
+      .cm-head, .cm-body, .cm-foot { padding-left: 16px; padding-right: 16px; }
+      .cm-head h2 { font-size: 1.08rem; }
+      .cm-cat > p, .cm-detail { margin-left: 0; }
+      .cm-foot { grid-template-columns: 1fr; }
+    }
+
+    /* Telemóveis muito estreitos (≤ 360px) */
+    @media (max-width: 360px) {
+      .brand .name { font-size: 1.12rem; }
+      .brand .sign { width: 34px; height: 34px; }
+      .lang-btn svg { display: none; }
+      .topbar-links { gap: 12px; }
+      .wa-float-text { display: none; }
+      .wa-float { padding: .5rem; }
+    }
+
+    /* Telemóvel na horizontal: hero mais baixo */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .hero { padding: 40px 0 50px; }
+      .hero-sign { width: 72px; height: 72px; margin-bottom: 12px; }
     }
   </style>
 </head>
@@ -295,7 +469,7 @@
 
 <div class="topbar">
   <div class="wrap">
-    <span><strong>Oficina multimarcas</strong> <span class="hide-sm">· Seg–Sex 8:30–18:30 · Sáb 9:00–13:00</span></span>
+    <span class="tb-label"><strong data-i18n="tb.garage">Oficina multimarcas</strong> <span class="hide-sm" data-i18n="tb.hours">· Seg–Sex 8:30–18:30 · Sáb 9:00–13:00</span></span>
     <span class="topbar-links">
       <a href="tel:+351214794122">☎ 214 794 122</a>
       <a href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><circle cx="12" cy="12" r="2.2"/><path d="M4.6 10.2c2.2.9 4.6 1.3 5.2 1.3M14.2 11.5c.6 0 3-.4 5.2-1.3M12 14.2v5.2"/></svg>WhatsApp</a>
@@ -305,35 +479,41 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#inicio" class="brand">
+    <a href="#inicio" class="brand" aria-label="Stopverde">
       <img class="sign" src="assets/stopverde.svg" alt="" width="48" height="48">
       <span class="words">
         <span class="name"><span class="stop">STOP</span><span class="verde">VERDE</span></span>
-        <span class="sub">SERVIÇOS AUTO</span>
+        <span class="sub" data-i18n="brand.sub">SERVIÇOS AUTO</span>
       </span>
     </a>
-    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
-    <ul id="menu">
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#sobre">Quem Somos</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#precos">Preços</a></li>
-      <li><a href="#parceiros">Seguradoras e Fornecedores</a></li>
-      <li><a href="#contactos">Contactos</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul id="menu">
+        <li><a href="#inicio" data-i18n="nav.home">Início</a></li>
+        <li><a href="#sobre" data-i18n="nav.about">Quem Somos</a></li>
+        <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
+        <li><a href="#precos" data-i18n="nav.prices">Preços</a></li>
+        <li><a href="#parceiros" data-i18n="nav.partners">Seguradoras e Fornecedores</a></li>
+        <li><a href="#contactos" data-i18n="nav.contact">Contactos</a></li>
+      </ul>
+      <button class="lang-btn" type="button" id="langBtn" aria-label="Switch to English" lang="en">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span id="langCode">EN</span>
+      </button>
+      <button class="menu-btn" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu" data-i18n-attr="aria-label:nav.open">☰</button>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="hero" id="inicio">
     <div class="wrap">
-      <img class="hero-sign" src="assets/stopverde.svg" alt="Símbolo Stopverde: sinal de STOP verde" width="132" height="132">
-      <div class="eyebrow">Oficina Multimarcas · Pontinha</div>
-      <h1>O seu carro em <span>boas mãos</span></h1>
-      <p>Revisões, chapa e pintura, distribuição, embraiagens, inspeções e muito mais — com o preço mais justo do mercado.</p>
+      <img class="hero-sign" src="assets/stopverde.svg" alt="Símbolo Stopverde: sinal de STOP verde" data-i18n-attr="alt:hero.signAlt" width="132" height="132">
+      <div class="eyebrow" data-i18n="hero.eyebrow">Oficina Multimarcas · Pontinha</div>
+      <h1 data-i18n="hero.title">O seu carro em <span>boas mãos</span></h1>
+      <p data-i18n="hero.text">Revisões, chapa e pintura, distribuição, embraiagens, inspeções e muito mais — com o preço mais justo do mercado.</p>
       <div class="cta">
-        <a class="btn btn-green" href="tel:+351214794122">Ligar agora</a>
-        <a class="btn btn-outline" href="#servicos">Os nossos serviços</a>
+        <a class="btn btn-green" href="tel:+351214794122" data-i18n="hero.call">Ligar agora</a>
+        <a class="btn btn-outline" href="#servicos" data-i18n="hero.services">Os nossos serviços</a>
       </div>
     </div>
   </div>
@@ -341,16 +521,16 @@
   <section id="sobre" class="dark">
     <div class="wrap">
       <div class="head">
-        <div class="eyebrow">Quem Somos</div>
-        <h2>A sua oficina de sempre</h2>
+        <div class="eyebrow" data-i18n="about.eyebrow">Quem Somos</div>
+        <h2 data-i18n="about.title">A sua oficina de sempre</h2>
         <div class="bar"></div>
       </div>
-      <p class="about-statement">As mesmas caras, a mesma <b>confiança</b> e o mesmo cuidado com o seu carro. <b>Sempre ao seu lado</b>, na Pontinha.</p>
-      <p class="about-text">Conhecemos os nossos clientes e tratamos cada carro como se fosse nosso. Profissionais especializados, um serviço de excelência e sempre o preço mais justo do mercado.</p>
+      <p class="about-statement" data-i18n="about.statement">As mesmas caras, a mesma <b>confiança</b> e o mesmo cuidado com o seu carro. <b>Sempre ao seu lado</b>, na Pontinha.</p>
+      <p class="about-text" data-i18n="about.text">Conhecemos os nossos clientes e tratamos cada carro como se fosse nosso. Profissionais especializados, um serviço de excelência e sempre o preço mais justo do mercado.</p>
       <div class="values">
-        <div class="value"><img src="assets/valores/confianca.svg" alt="Aperto de mão" width="96" height="96"><h3>Confiança</h3><p>Trabalho transparente</p></div>
-        <div class="value"><img src="assets/valores/simpatia.svg" alt="Cara sorridente com coração" width="96" height="96"><h3>Simpatia</h3><p>Atendimento próximo</p></div>
-        <div class="value"><img src="assets/valores/qualidade.svg" alt="Medalha de qualidade" width="96" height="96"><h3>Qualidade</h3><p>Serviço garantido</p></div>
+        <div class="value"><img src="assets/valores/confianca.svg" alt="Aperto de mão" data-i18n-attr="alt:val.trustAlt" width="96" height="96"><h3 data-i18n="val.trust">Confiança</h3><p data-i18n="val.trustText">Trabalho transparente</p></div>
+        <div class="value"><img src="assets/valores/simpatia.svg" alt="Cara sorridente com coração" data-i18n-attr="alt:val.kindAlt" width="96" height="96"><h3 data-i18n="val.kind">Simpatia</h3><p data-i18n="val.kindText">Atendimento próximo</p></div>
+        <div class="value"><img src="assets/valores/qualidade.svg" alt="Medalha de qualidade" data-i18n-attr="alt:val.qualityAlt" width="96" height="96"><h3 data-i18n="val.quality">Qualidade</h3><p data-i18n="val.qualityText">Serviço garantido</p></div>
       </div>
     </div>
   </section>
@@ -358,61 +538,61 @@
   <section id="servicos">
     <div class="wrap">
       <div class="head">
-        <div class="eyebrow">O que fazemos</div>
-        <h2>Os nossos serviços</h2>
+        <div class="eyebrow" data-i18n="srv.eyebrow">O que fazemos</div>
+        <h2 data-i18n="srv.title">Os nossos serviços</h2>
         <div class="bar"></div>
       </div>
       <div class="services">
         <div class="service">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-          <h3>Revisões Gerais</h3>
-          <p>Manutenção periódica para todas as marcas.</p>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <h3 data-i18n="srv.1">Revisões Gerais</h3>
+          <p data-i18n="srv.1t">Manutenção periódica para todas as marcas.</p>
         </div>
         <div class="service">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.4 2.6a2 2 0 0 1 3 3L12 15l-4 1 1-4z"/><path d="M4 20c2 0 3-1 3-3"/></svg></div>
-          <h3>Chapa e Pintura</h3>
-          <p>Reparação de carroçaria e pintura.</p>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.4 2.6a2 2 0 0 1 3 3L12 15l-4 1 1-4z"/><path d="M4 20c2 0 3-1 3-3"/></svg></div>
+          <h3 data-i18n="srv.2">Chapa e Pintura</h3>
+          <p data-i18n="srv.2t">Reparação de carroçaria e pintura.</p>
         </div>
         <div class="service">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M6 9h12M6 15h12"/></svg></div>
-          <h3>Correias de Distribuição</h3>
-          <p>Substituição de kits de distribuição.</p>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M6 9h12M6 15h12"/></svg></div>
+          <h3 data-i18n="srv.3">Correias de Distribuição</h3>
+          <p data-i18n="srv.3t">Substituição de kits de distribuição.</p>
         </div>
         <div class="service">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
-          <h3>Kits de Embraiagem</h3>
-          <p>Diagnóstico e substituição de embraiagens.</p>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+          <h3 data-i18n="srv.4">Kits de Embraiagem</h3>
+          <p data-i18n="srv.4t">Diagnóstico e substituição de embraiagens.</p>
         </div>
         <div class="service">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7S6 9.5 6 14a6 6 0 0 0 12 0c0-4.5-6-11.3-6-11.3z"/></svg></div>
-          <h3>Mudanças de Óleo</h3>
-          <p>Óleo e filtros trocados no momento certo.</p>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7S6 9.5 6 14a6 6 0 0 0 12 0c0-4.5-6-11.3-6-11.3z"/></svg></div>
+          <h3 data-i18n="srv.5">Mudanças de Óleo</h3>
+          <p data-i18n="srv.5t">Óleo e filtros trocados no momento certo.</p>
         </div>
         <div class="service">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <h3>Serviços Rápidos</h3>
-          <p>Pequenas reparações sem complicações.</p>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3 data-i18n="srv.6">Serviços Rápidos</h3>
+          <p data-i18n="srv.6t">Pequenas reparações sem complicações.</p>
         </div>
         <div class="service">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>
-          <h3>Focagem de Faróis</h3>
-          <p>Faróis bem alinhados, melhor visibilidade.</p>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>
+          <h3 data-i18n="srv.7">Focagem de Faróis</h3>
+          <p data-i18n="srv.7t">Faróis bem alinhados, melhor visibilidade.</p>
         </div>
         <div class="service">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Inspeções</h3>
-          <p>Preparamos o seu carro para a inspeção.</p>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3 data-i18n="srv.8">Inspeções</h3>
+          <p data-i18n="srv.8t">Preparamos o seu carro para a inspeção.</p>
         </div>
       </div>
-      <p class="more">…e muito mais!</p>
+      <p class="more" data-i18n="srv.more">…e muito mais!</p>
     </div>
   </section>
 
   <div class="band">
     <div class="wrap">
       <div>
-        <h2>Tem um problema com o seu carro?</h2>
-        <p>Fale connosco — damos-lhe um orçamento sem compromisso.</p>
+        <h2 data-i18n="band.title">Tem um problema com o seu carro?</h2>
+        <p data-i18n="band.text">Fale connosco — damos-lhe um orçamento sem compromisso.</p>
       </div>
       <a class="btn" href="tel:+351214794122">☎ 214 794 122</a>
     </div>
@@ -421,51 +601,51 @@
   <section id="precos" class="grey">
     <div class="wrap">
       <div class="head">
-        <div class="eyebrow">Preços</div>
-        <h2>A parte que ninguém gosta</h2>
+        <div class="eyebrow" data-i18n="pr.eyebrow">Preços</div>
+        <h2 data-i18n="pr.title">A parte que ninguém gosta</h2>
         <div class="bar"></div>
-        <p>Sabemos que é a secção que todos saltam. Por isso, vamos ser rápidos — e justos.</p>
+        <p data-i18n="pr.text">Sabemos que é a secção que todos saltam. Por isso, vamos ser rápidos — e justos.</p>
       </div>
       <div class="prices-fun">
         <div class="gauge-card">
-          <svg class="gauge" viewBox="-26 -16 252 128" role="img" aria-label="Preçómetro: o ponteiro vai de Ai! até Justo">
+          <svg class="gauge" viewBox="-26 -16 252 128" role="img" aria-label="Preçómetro: o ponteiro vai de Ai! até Justo" data-i18n-attr="aria-label:pr.gaugeAlt">
             <path d="M20 100 A80 80 0 0 1 60 30.7" fill="none" stroke="#e30613" stroke-width="18"/>
             <path d="M60 30.7 A80 80 0 0 1 140 30.7" fill="none" stroke="#f5b800" stroke-width="18"/>
             <path d="M140 30.7 A80 80 0 0 1 180 100" fill="none" stroke="#1fbf43" stroke-width="18"/>
-            <text x="2" y="44" text-anchor="middle">Ai!</text>
+            <text x="2" y="44" text-anchor="middle" data-i18n="pr.ouch">Ai!</text>
             <text x="100" y="-2" text-anchor="middle">Hmm…</text>
-            <text x="200" y="44" text-anchor="middle" fill="#179a35" style="fill:#179a35">Justo</text>
+            <text class="fair" x="200" y="44" text-anchor="middle" data-i18n="pr.fair">Justo</text>
             <g class="needle">
               <line x1="100" y1="100" x2="100" y2="34" stroke="#0e0e0f" stroke-width="5" stroke-linecap="round"/>
             </g>
             <circle cx="100" cy="100" r="10" fill="#0e0e0f"/>
             <circle cx="100" cy="100" r="4" fill="#1fbf43"/>
           </svg>
-          <div class="gauge-title">Preçómetro Stopverde</div>
-          <p>O ponteiro aponta sempre para o mesmo lado.</p>
+          <div class="gauge-title" data-i18n="pr.gauge">Preçómetro Stopverde</div>
+          <p data-i18n="pr.gaugeText">O ponteiro aponta sempre para o mesmo lado.</p>
         </div>
         <div class="lights">
           <div class="light" style="--c:#f5b800; --g:rgba(245,184,0,.45)">
             <div class="lamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h9l3 3h3l4-3-4 7H6a3 3 0 0 1-3-3z"/><path d="M7 11V8h4"/><path d="M21 15.5c0 .8-.5 1.5-1 1.5"/></svg></div>
-            <div><div class="q">A luz do óleo acendeu?</div><h3>Mudanças de óleo</h3></div>
-            <span class="val">Sob consulta</span>
+            <div><div class="q" data-i18n="pr.oilQ">A luz do óleo acendeu?</div><h3 data-i18n="pr.oil">Mudanças de óleo</h3></div>
+            <span class="val" data-i18n="pr.ask">Sob consulta</span>
           </div>
           <div class="light" style="--c:#ff8a00; --g:rgba(255,138,0,.45)">
             <div class="lamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-            <div><div class="q">Chegou a hora da revisão?</div><h3>Revisões</h3></div>
-            <span class="val">Sob consulta</span>
+            <div><div class="q" data-i18n="pr.svcQ">Chegou a hora da revisão?</div><h3 data-i18n="pr.svc">Revisões</h3></div>
+            <span class="val" data-i18n="pr.ask">Sob consulta</span>
           </div>
           <div class="light" style="--c:#1fbf43; --g:rgba(31,191,67,.45)">
             <div class="lamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></svg></div>
-            <div><div class="q">Quanto custa uma hora connosco?</div><h3>Mão de obra / hora</h3></div>
-            <span class="val">Sob consulta</span>
+            <div><div class="q" data-i18n="pr.labQ">Quanto custa uma hora connosco?</div><h3 data-i18n="pr.lab">Mão de obra / hora</h3></div>
+            <span class="val" data-i18n="pr.ask">Sob consulta</span>
           </div>
         </div>
       </div>
-      <p class="prices-note">Os preços dependem do modelo e do estado do carro. Diga-nos qual é e damos-lhe o valor certo.</p>
+      <p class="prices-note" data-i18n="pr.note">Os preços dependem do modelo e do estado do carro. Diga-nos qual é e damos-lhe o valor certo.</p>
       <div class="cta">
-        <a class="btn btn-wa" href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer">Pedir orçamento no WhatsApp</a>
-        <a class="btn btn-dark" href="tel:+351214794122">Ligar 214 794 122</a>
+        <a class="btn btn-wa" href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer" data-i18n="pr.wa">Pedir orçamento no WhatsApp</a>
+        <a class="btn btn-dark" href="tel:+351214794122" data-i18n="pr.call">Ligar 214 794 122</a>
       </div>
     </div>
   </section>
@@ -473,86 +653,97 @@
   <section id="parceiros" class="dark">
     <div class="wrap">
       <div class="head">
-        <div class="eyebrow">Rede</div>
-        <h2>Seguradoras e fornecedores</h2>
+        <div class="eyebrow" data-i18n="pa.eyebrow">Rede</div>
+        <h2 data-i18n="pa.title">Seguradoras e fornecedores</h2>
         <div class="bar"></div>
       </div>
       <div class="partners">
         <div class="partner">
-          <h3>Seguradoras</h3>
-          <p>As seguradoras com quem trabalhamos.</p>
+          <h3 data-i18n="pa.ins">Seguradoras</h3>
+          <p data-i18n="pa.insText">As seguradoras com quem trabalhamos.</p>
           <ul class="partner-list">
             <li>
-              <span class="pl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12a10 10 0 0 0-20 0Z"/><path d="M12 12v7a2 2 0 0 0 4 0"/><path d="M12 2v1"/></svg></span>
-              <span><b>Fidelidade</b><small>Seguros</small></span>
+              <span class="logo-plate"><img src="assets/marcas/fidelidade.png" alt="Fidelidade" width="314" height="57" loading="lazy"></span>
+              <small data-i18n="pa.insCat">Seguros</small>
             </li>
             <li>
-              <span class="pl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12a10 10 0 0 0-20 0Z"/><path d="M12 12v7a2 2 0 0 0 4 0"/><path d="M12 2v1"/></svg></span>
-              <span><b>Allianz Auto</b><small>Seguros</small></span>
+              <span class="logo-plate"><img src="assets/marcas/allianz.svg" alt="Allianz" width="400" height="99" loading="lazy"></span>
+              <small data-i18n="pa.insCatAuto">Seguro automóvel</small>
             </li>
           </ul>
         </div>
         <div class="partner">
-          <h3>Fornecedores</h3>
-          <p>Peças, óleos, pneus e iluminação de marcas em que confiamos — veja abaixo.</p>
+          <h3 data-i18n="pa.sup">Fornecedores</h3>
+          <p data-i18n="pa.supText">Peças, óleos, pneus e iluminação de marcas em que confiamos — veja abaixo.</p>
         </div>
         <div class="partner">
-          <h3>Parcerias</h3>
-          <p>Empresas e entidades parceiras da Stopverde.</p>
+          <h3 data-i18n="pa.part">Parcerias</h3>
+          <p data-i18n="pa.partText">Empresas e entidades parceiras da Stopverde.</p>
           <ul class="partner-list">
             <li>
-              <span class="pl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-              <span><b>DECO PROteste</b><small>Defesa do consumidor</small></span>
+              <span class="logo-plate"><img src="assets/marcas/deco.svg" alt="DECO PROteste" width="416" height="89" loading="lazy"></span>
+              <small data-i18n="pa.decoCat">Defesa do consumidor</small>
             </li>
           </ul>
         </div>
       </div>
 
-      <h3 class="brands-title">Marcas com que trabalhamos</h3>
+      <h3 class="brands-title" data-i18n="pa.brands">Marcas com que trabalhamos</h3>
       <ul class="brands">
-        <li class="brand-tile"><span class="brand-name">Bosch</span><span class="brand-cat">Peças auto</span></li>
-        <li class="brand-tile"><span class="brand-name">Liqui Moly</span><span class="brand-cat">Óleos</span></li>
-        <li class="brand-tile"><span class="brand-name">Osram</span><span class="brand-cat">Iluminação</span></li>
-        <li class="brand-tile"><span class="brand-name">Michelin</span><span class="brand-cat">Pneus</span></li>
-        <li class="brand-tile"><span class="brand-name">Monroe</span><span class="brand-cat">Amortecedores</span></li>
+        <li class="brand-tile"><img src="assets/marcas/bosch.svg" alt="Bosch" width="433" height="97" loading="lazy"><span class="brand-cat" data-i18n="br.bosch">Peças auto</span></li>
+        <li class="brand-tile"><img class="tall" src="assets/marcas/liquimoly.svg" alt="Liqui Moly" width="568" height="371" loading="lazy"><span class="brand-cat" data-i18n="br.oil">Óleos</span></li>
+        <li class="brand-tile"><img src="assets/marcas/osram.svg" alt="Osram" width="744" height="193" loading="lazy"><span class="brand-cat" data-i18n="br.light">Iluminação</span></li>
+        <li class="brand-tile"><img src="assets/marcas/michelin.svg" alt="Michelin" width="1000" height="101" loading="lazy"><span class="brand-cat" data-i18n="br.tyres">Pneus</span></li>
+        <li class="brand-tile"><img src="assets/marcas/monroe.png" alt="Monroe" width="771" height="124" loading="lazy"><span class="brand-cat" data-i18n="br.shocks">Amortecedores</span></li>
       </ul>
+      <p class="logos-note" data-i18n="pa.logosNote">Os logótipos são marcas registadas dos respetivos proprietários.</p>
     </div>
   </section>
 
   <section id="contactos">
     <div class="wrap">
       <div class="head">
-        <div class="eyebrow">Fale connosco</div>
-        <h2>Contactos</h2>
+        <div class="eyebrow" data-i18n="ct.eyebrow">Fale connosco</div>
+        <h2 data-i18n="ct.title">Contactos</h2>
         <div class="bar"></div>
       </div>
       <div class="contact">
         <div class="contact-info">
           <div>
-            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Telefone</h3>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="ct.phone">Telefone</span></h3>
             <a class="big-phone" href="tel:+351214794122">214 794 122</a>
-            <p style="margin-top:8px">Telemóvel / WhatsApp: <a href="tel:+351960219587">960 219 587</a> · <a href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer">Enviar mensagem</a></p>
+            <p class="mobile"><span data-i18n="ct.mobile">Telemóvel / WhatsApp:</span> <a href="tel:+351960219587">960 219 587</a> · <a href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer" data-i18n="ct.send">Enviar mensagem</a></p>
           </div>
           <div>
-            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Morada</h3>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="ct.address">Morada</span></h3>
             <p>Stopverde, Lda.<br>Av. de São Pedro, Lote R-7 Loja A<br>1675-129 Pontinha – Odivelas</p>
           </div>
           <div>
-            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>Email e redes</h3>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><span data-i18n="ct.email">Email e redes</span></h3>
             <p><a href="mailto:stopverde@sapo.pt">stopverde@sapo.pt</a><br><a href="https://www.facebook.com/Stopverde/" target="_blank" rel="noopener">facebook.com/Stopverde</a></p>
           </div>
           <div>
-            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Horário</h3>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="ct.hours">Horário</span></h3>
             <table class="hours">
-              <tr><td>Segunda a Sexta</td><td>8:30 – 18:30</td></tr>
-              <tr><td>Almoço (encerrado)</td><td>13:00 – 14:30</td></tr>
-              <tr><td>Sábado</td><td>9:00 – 13:00</td></tr>
+              <tr><td data-i18n="ct.weekdays">Segunda a Sexta</td><td>8:30 – 18:30</td></tr>
+              <tr><td data-i18n="ct.lunch">Almoço (encerrado)</td><td>13:00 – 14:30</td></tr>
+              <tr><td data-i18n="ct.saturday">Sábado</td><td>9:00 – 13:00</td></tr>
             </table>
           </div>
         </div>
-        <div class="map">
-          <iframe title="Mapa – Stopverde, Pontinha" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Av.+de+S%C3%A3o+Pedro+Lote+R-7,+1675-129+Pontinha&output=embed"></iframe>
+        <div class="map" id="map">
+          <div class="map-ph">
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <p data-i18n="map.text">O mapa é fornecido pela Google, que pode guardar cookies no seu navegador. Para o ver aqui, aceite os cookies funcionais.</p>
+              <div class="row">
+                <button type="button" class="cbtn cbtn-solid" id="mapAllow" data-i18n="map.show">Mostrar mapa</button>
+                <a class="cbtn cbtn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+de+S%C3%A3o+Pedro+Lote+R-7%2C+1675-129+Pontinha" target="_blank" rel="noopener noreferrer" data-i18n="map.open">Abrir no Google Maps</a>
+              </div>
+            </div>
+          </div>
+          <iframe hidden title="Mapa – Stopverde, Pontinha" data-i18n-attr="title:ct.map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            data-src="https://www.google.com/maps?q=Av.+de+S%C3%A3o+Pedro+Lote+R-7,+1675-129+Pontinha&amp;output=embed"></iframe>
         </div>
       </div>
     </div>
@@ -561,40 +752,321 @@
 
 <footer>
   <div class="wrap">
-    <span class="brand"><img class="sign" src="assets/stopverde.svg" alt="" width="36" height="36" style="width:36px;height:36px"><span class="name"><span class="stop">STOP</span><span class="verde">VERDE</span></span></span>
-    <span>© <span id="year"></span> Stopverde, Lda. · Av. de São Pedro, Lote R-7 Loja A, Pontinha · <a href="tel:+351214794122">214 794 122</a></span>
+    <span class="brand"><img class="sign" src="assets/stopverde.svg" alt="" width="36" height="36"><span class="name"><span class="stop">STOP</span><span class="verde">VERDE</span></span></span>
+    <span>© <span id="year"></span> Stopverde, Lda. · Av. de São Pedro, Lote R-7 Loja A, Pontinha · <a href="tel:+351214794122">214 794 122</a> · <button type="button" class="cookie-link" id="cookiePrefs" data-i18n="ck.footer">Preferências de cookies</button></span>
   </div>
 </footer>
 
-<a href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Fale connosco via WhatsApp" title="Contactar via WhatsApp">
+<!-- Consentimento: banner de primeiro nível -->
+<div class="consent-banner" id="consentBanner" role="region" aria-labelledby="cbTitle" hidden>
+  <div class="wrap">
+    <div>
+      <h2 id="cbTitle" data-i18n="ck.bTitle">Valorizamos a sua privacidade</h2>
+      <p data-i18n="ck.bText">Usamos cookies para melhorar a sua experiência e mostrar conteúdos de terceiros, como o mapa da Google. Ao clicar em «Aceitar tudo», consente a utilização de cookies.</p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" class="cbtn cbtn-ghost" data-consent="customize" data-i18n="ck.customize">Personalizar</button>
+      <button type="button" class="cbtn cbtn-solid" data-consent="reject" data-i18n="ck.reject">Rejeitar tudo</button>
+      <button type="button" class="cbtn cbtn-solid" data-consent="accept" data-i18n="ck.accept">Aceitar tudo</button>
+    </div>
+  </div>
+</div>
+
+<!-- Consentimento: preferências por categoria -->
+<div class="consent-modal" id="consentModal" hidden>
+  <div class="cm-box" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+    <div class="cm-head">
+      <h2 id="cmTitle" data-i18n="ck.mTitle">Personalizar as preferências de consentimento</h2>
+      <button type="button" class="cm-close" id="cmClose" aria-label="Fechar" data-i18n-attr="aria-label:ck.close">✕</button>
+    </div>
+    <div class="cm-body">
+      <p data-i18n="ck.intro1">Utilizamos cookies para que possa navegar no site com facilidade e para ativar algumas funções. Abaixo encontra informação sobre os cookies de cada categoria de consentimento.</p>
+      <p><span data-i18n="ck.intro2">Os cookies da categoria «Necessário» ficam guardados no seu navegador, porque são indispensáveis ao funcionamento básico do site…</span>
+        <span id="cmMoreText" hidden data-i18n="ck.intro3">Usamos também cookies de terceiros, que nos permitem mostrar conteúdos externos, como o mapa da Google. Estes só são guardados no seu navegador com o seu consentimento. Pode ativar ou desativar cada categoria, mas desativar alguns cookies pode afetar a sua experiência no site.</span>
+        <button type="button" class="linkbtn" id="cmMore" aria-expanded="false" aria-controls="cmMoreText"><span data-i18n="ck.more">Mostrar mais</span><span data-i18n="ck.less" hidden>Mostrar menos</span></button>
+      </p>
+      <p><span data-i18n="ck.google">Para saber como os cookies de terceiros da Google funcionam e tratam os dados dos utilizadores, consulte a</span> <a href="https://policies.google.com/privacy?hl=pt-PT" target="_blank" rel="noopener noreferrer" data-i18n="ck.googleLink">Política de Privacidade da Google</a>.</p>
+
+      <div class="cm-cat">
+        <div class="cm-cat-head">
+          <button type="button" class="cm-cat-toggle" aria-expanded="false" aria-controls="catNec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg><span data-i18n="ck.nec">Necessário</span></button>
+          <span class="always" data-i18n="ck.always">Sempre ativo</span>
+        </div>
+        <p data-i18n="ck.necText">Os cookies necessários são indispensáveis às funções básicas do site, que sem eles não funciona como deveria. Não guardam nenhum dado que o identifique.</p>
+        <div class="cm-detail" id="catNec" hidden>
+          <table>
+            <tr><th>stopverde-consent</th><td data-i18n="ck.necC1">Guarda as suas escolhas de cookies (armazenamento local do navegador).</td></tr>
+            <tr><th>stopverde-lang</th><td data-i18n="ck.necC2">Guarda a língua escolhida, português ou inglês (armazenamento local do navegador).</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="cm-cat">
+        <div class="cm-cat-head">
+          <button type="button" class="cm-cat-toggle" aria-expanded="false" aria-controls="catFun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg><span data-i18n="ck.fun">Funcional</span></button>
+          <input type="checkbox" class="switch" id="fnSwitch" role="switch" aria-label="Cookies funcionais" data-i18n-attr="aria-label:ck.funAria">
+        </div>
+        <p data-i18n="ck.funText">Os cookies funcionais permitem funcionalidades de terceiros, como mostrar o mapa da Google com a localização da oficina.</p>
+        <div class="cm-detail" id="catFun" hidden>
+          <table>
+            <tr><th>Google Maps</th><td data-i18n="ck.funC1">Cookies definidos pela Google (google.com) quando o mapa da secção Contactos é carregado.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="cm-foot">
+      <button type="button" class="cbtn cbtn-solid" data-consent="reject" data-i18n="ck.reject">Rejeitar tudo</button>
+      <button type="button" class="cbtn cbtn-ghost" data-consent="save" data-i18n="ck.save">Guardar as minhas preferências</button>
+      <button type="button" class="cbtn cbtn-solid" data-consent="accept" data-i18n="ck.accept">Aceitar tudo</button>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Fale connosco via WhatsApp" title="Contactar via WhatsApp" data-i18n-attr="aria-label:wa.aria;title:wa.title">
   <span class="wa-float-badge">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><circle cx="12" cy="12" r="2.2"/><path d="M4.6 10.2c2.2.9 4.6 1.3 5.2 1.3M14.2 11.5c.6 0 3-.4 5.2-1.3M12 14.2v5.2"/></svg>
   </span>
-  <span class="wa-float-text">Fale connosco</span>
+  <span class="wa-float-text" data-i18n="wa.text">Fale connosco</span>
 </a>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Menu mobile ---------- */
   const btn = document.querySelector('.menu-btn');
   const menu = document.getElementById('menu');
+  const closeMenu = () => { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.textContent = '☰'; };
   btn.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? '✕' : '☰';
   });
-  // Preçómetro e luzes do painel: animam quando a secção aparece
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  document.addEventListener('click', e => { if (!e.target.closest('header')) closeMenu(); });
+  window.matchMedia('(min-width: 1081px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
+
+  /* ---------- Preçómetro e luzes do painel ---------- */
   const fun = document.querySelectorAll('.gauge, .lights');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
-    }), { threshold: 0.5 });
+    }), { threshold: 0.4 });
     fun.forEach(el => io.observe(el));
   } else {
     fun.forEach(el => el.classList.add('on'));
   }
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    menu.classList.remove('open');
-    btn.setAttribute('aria-expanded', 'false');
+
+  /* ---------- Português / English ----------
+     O português está no HTML. Aqui só fica o inglês, por chave (data-i18n). */
+  const EN = {
+    'meta.title': 'Stopverde · Car Services in Pontinha, Lisbon',
+    'meta.desc': 'Stopverde – multi-brand garage in Pontinha, Odivelas (Lisbon). Servicing, bodywork and paint, timing belts, clutches, oil changes and inspections.',
+    'tb.garage': 'Multi-brand garage',
+    'tb.hours': '· Mon–Fri 8:30–18:30 · Sat 9:00–13:00',
+    'brand.sub': 'CAR SERVICES',
+    'nav.home': 'Home', 'nav.about': 'About us', 'nav.services': 'Services', 'nav.prices': 'Prices',
+    'nav.partners': 'Insurers &amp; Suppliers', 'nav.contact': 'Contact', 'nav.open': 'Open menu',
+    'hero.signAlt': 'Stopverde symbol: a green STOP sign',
+    'hero.eyebrow': 'Multi-brand Garage · Pontinha',
+    'hero.title': 'Your car in <span>good hands</span>',
+    'hero.text': 'Servicing, bodywork and paint, timing belts, clutches, inspections and much more — at the fairest price around.',
+    'hero.call': 'Call now', 'hero.services': 'Our services',
+    'about.eyebrow': 'About us',
+    'about.title': 'Your trusted local garage',
+    'about.statement': 'The same faces, the same <b>trust</b> and the same care for your car. <b>Always by your side</b>, in Pontinha.',
+    'about.text': 'We know our customers and treat every car as if it were our own. Skilled professionals, excellent service and always the fairest price around.',
+    'val.trust': 'Trust', 'val.trustText': 'Transparent work', 'val.trustAlt': 'Handshake',
+    'val.kind': 'Friendliness', 'val.kindText': 'Personal service', 'val.kindAlt': 'Smiling face with a heart',
+    'val.quality': 'Quality', 'val.qualityText': 'Guaranteed service', 'val.qualityAlt': 'Quality medal',
+    'srv.eyebrow': 'What we do', 'srv.title': 'Our services',
+    'srv.1': 'General Servicing', 'srv.1t': 'Scheduled maintenance for every make.',
+    'srv.2': 'Bodywork &amp; Paint', 'srv.2t': 'Body repairs and paintwork.',
+    'srv.3': 'Timing Belts', 'srv.3t': 'Timing belt kit replacement.',
+    'srv.4': 'Clutch Kits', 'srv.4t': 'Clutch diagnosis and replacement.',
+    'srv.5': 'Oil Changes', 'srv.5t': 'Oil and filters changed at the right time.',
+    'srv.6': 'Quick Services', 'srv.6t': 'Small repairs, no fuss.',
+    'srv.7': 'Headlight Alignment', 'srv.7t': 'Well-aimed headlights, better visibility.',
+    'srv.8': 'Inspections', 'srv.8t': 'We get your car ready for its inspection.',
+    'srv.more': '…and much more!',
+    'band.title': 'Got a problem with your car?',
+    'band.text': 'Talk to us — we\'ll give you a no-obligation quote.',
+    'pr.eyebrow': 'Prices', 'pr.title': 'The part nobody likes',
+    'pr.text': 'We know it\'s the section everyone skips. So we\'ll keep it quick — and fair.',
+    'pr.gaugeAlt': 'Price-o-meter: the needle goes from Ouch! to Fair',
+    'pr.ouch': 'Ouch!', 'pr.fair': 'Fair',
+    'pr.gauge': 'Stopverde Price-o-meter', 'pr.gaugeText': 'The needle always points the same way.',
+    'pr.oilQ': 'Oil light on?', 'pr.oil': 'Oil changes',
+    'pr.svcQ': 'Time for a service?', 'pr.svc': 'Servicing',
+    'pr.labQ': 'What does an hour with us cost?', 'pr.lab': 'Labour / hour',
+    'pr.ask': 'On request',
+    'pr.note': 'Prices depend on the model and condition of your car. Tell us which one and we\'ll give you the right figure.',
+    'pr.wa': 'Get a quote on WhatsApp', 'pr.call': 'Call 214 794 122',
+    'pa.eyebrow': 'Network', 'pa.title': 'Insurers &amp; suppliers',
+    'pa.ins': 'Insurers', 'pa.insText': 'The insurers we work with.', 'pa.insCat': 'Insurance', 'pa.insCatAuto': 'Car insurance',
+    'pa.sup': 'Suppliers', 'pa.supText': 'Parts, oils, tyres and lighting from brands we trust — see below.',
+    'pa.part': 'Partnerships', 'pa.partText': 'Companies and organisations that partner with Stopverde.', 'pa.decoCat': 'Consumer protection',
+    'pa.brands': 'Brands we work with',
+    'pa.logosNote': 'Logos are registered trademarks of their respective owners.',
+    'br.bosch': 'Car parts', 'br.oil': 'Oils', 'br.light': 'Lighting', 'br.tyres': 'Tyres', 'br.shocks': 'Shock absorbers',
+    'ct.eyebrow': 'Get in touch', 'ct.title': 'Contact',
+    'ct.phone': 'Phone', 'ct.mobile': 'Mobile / WhatsApp:', 'ct.send': 'Send a message',
+    'ct.address': 'Address', 'ct.email': 'Email &amp; social', 'ct.hours': 'Opening hours',
+    'ct.weekdays': 'Monday to Friday', 'ct.lunch': 'Lunch (closed)', 'ct.saturday': 'Saturday',
+    'ct.map': 'Map – Stopverde, Pontinha',
+    'wa.aria': 'Chat with us on WhatsApp', 'wa.title': 'Contact us on WhatsApp', 'wa.text': 'Chat with us',
+    'map.text': 'The map is provided by Google, which may store cookies in your browser. To see it here, accept functional cookies.',
+    'map.show': 'Show map', 'map.open': 'Open in Google Maps',
+    'ck.footer': 'Cookie preferences',
+    'ck.bTitle': 'We value your privacy',
+    'ck.bText': 'We use cookies to improve your experience and to show third-party content such as the Google map. By clicking “Accept all”, you consent to the use of cookies.',
+    'ck.customize': 'Customise', 'ck.reject': 'Reject all', 'ck.accept': 'Accept all', 'ck.save': 'Save my preferences',
+    'ck.mTitle': 'Customise consent preferences', 'ck.close': 'Close',
+    'ck.intro1': 'We use cookies to help you browse the site easily and to enable certain features. Below you will find information about the cookies in each consent category.',
+    'ck.intro2': 'Cookies in the “Necessary” category are stored in your browser because they are essential for the site’s basic features…',
+    'ck.intro3': 'We also use third-party cookies that let us show external content, such as the Google map. These are only stored in your browser with your consent. You can turn each category on or off, but turning some cookies off may affect your experience on the site.',
+    'ck.more': 'Show more', 'ck.less': 'Show less',
+    'ck.google': 'To learn how Google’s third-party cookies work and process user data, see the',
+    'ck.googleLink': 'Google Privacy Policy',
+    'ck.nec': 'Necessary', 'ck.always': 'Always active',
+    'ck.necText': 'Necessary cookies are essential for the site’s basic functions; without them the site will not work as intended. They do not store any data that identifies you.',
+    'ck.necC1': 'Stores your cookie choices (browser local storage).',
+    'ck.necC2': 'Stores your chosen language, Portuguese or English (browser local storage).',
+    'ck.fun': 'Functional', 'ck.funAria': 'Functional cookies',
+    'ck.funText': 'Functional cookies enable third-party features, such as showing the Google map with the garage’s location.',
+    'ck.funC1': 'Cookies set by Google (google.com) when the map in the Contact section is loaded.'
+  };
+
+  const textNodes = [...document.querySelectorAll('[data-i18n]')];
+  const attrNodes = [...document.querySelectorAll('[data-i18n-attr]')];
+  const ptText = new Map(textNodes.map(n => [n, n.innerHTML]));
+  const ptAttr = new Map(attrNodes.map(n => [n, Object.fromEntries(
+    n.dataset.i18nAttr.split(';').map(p => { const a = p.split(':')[0]; return [a, n.getAttribute(a)]; })
+  )]));
+  const metaDesc = document.querySelector('meta[name="description"]');
+  const ptMeta = { title: document.title, desc: metaDesc.content };
+  const langBtn = document.getElementById('langBtn');
+  const langCode = document.getElementById('langCode');
+  let lang = 'pt';
+
+  function setLang(l, save) {
+    lang = l === 'en' ? 'en' : 'pt';
+    const en = lang === 'en';
+    textNodes.forEach(n => { const k = n.dataset.i18n; n.innerHTML = en && EN[k] != null ? EN[k] : ptText.get(n); });
+    attrNodes.forEach(n => n.dataset.i18nAttr.split(';').forEach(p => {
+      const [a, k] = p.split(':');
+      n.setAttribute(a, en && EN[k] != null ? EN[k] : ptAttr.get(n)[a]);
+    }));
+    document.documentElement.lang = en ? 'en' : 'pt';
+    document.title = en ? EN['meta.title'] : ptMeta.title;
+    metaDesc.content = en ? EN['meta.desc'] : ptMeta.desc;
+    langCode.textContent = en ? 'PT' : 'EN';
+    langBtn.setAttribute('lang', en ? 'pt' : 'en');
+    langBtn.setAttribute('aria-label', en ? 'Mudar para português' : 'Switch to English');
+    if (save) { try { localStorage.setItem('stopverde-lang', lang); } catch (e) {} }
+  }
+
+  langBtn.addEventListener('click', () => {
+    setLang(lang === 'en' ? 'pt' : 'en', true);
+    try {
+      const u = new URL(location.href);
+      if (lang === 'en') u.searchParams.set('lang', 'en'); else u.searchParams.delete('lang');
+      history.replaceState(null, '', u);
+    } catch (e) {}
+  });
+
+  // Língua inicial: ?lang= → escolha guardada → língua do browser (português por omissão)
+  (function () {
+    let l = null;
+    try { l = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+    if (l !== 'en' && l !== 'pt') { try { l = localStorage.getItem('stopverde-lang'); } catch (e) {} }
+    if (l !== 'en' && l !== 'pt') {
+      const langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'pt'];
+      l = langs.some(x => /^pt/i.test(x)) ? 'pt' : 'en';
+    }
+    if (l === 'en') setLang('en', false);
+  })();
+
+  /* ---------- Consentimento de cookies ----------
+     Necessário: sempre ativo (escolhas de cookies e de língua, no navegador).
+     Funcional: mapa da Google — só carrega com consentimento. */
+  const CONSENT_KEY = 'stopverde-consent';
+  const banner = document.getElementById('consentBanner');
+  const modal = document.getElementById('consentModal');
+  const fnSwitch = document.getElementById('fnSwitch');
+  const mapBox = document.getElementById('map');
+  const mapFrame = mapBox.querySelector('iframe');
+  let consent = null;
+  let lastFocus = null;
+  try { const c = JSON.parse(localStorage.getItem(CONSENT_KEY)); if (c && c.v === 1) consent = c; } catch (e) {}
+
+  function applyConsent() {
+    if (consent && consent.functional) {
+      if (!mapBox.classList.contains('loaded')) { mapFrame.src = mapFrame.dataset.src; mapFrame.hidden = false; mapBox.classList.add('loaded'); }
+    } else if (mapBox.classList.contains('loaded')) {
+      mapFrame.src = 'about:blank'; mapFrame.hidden = true; mapBox.classList.remove('loaded');
+    }
+  }
+  function syncBodyClass() {
+    document.body.classList.toggle('consent-open', !banner.hidden || !modal.hidden);
+    document.body.classList.toggle('modal-open', !modal.hidden);
+  }
+  function showBanner() { banner.hidden = false; syncBodyClass(); }
+  function openModal() {
+    lastFocus = document.activeElement;
+    fnSwitch.checked = !!(consent && consent.functional);
+    banner.hidden = true; modal.hidden = false; syncBodyClass();
+    document.getElementById('cmClose').focus();
+  }
+  function closeModal() {
+    modal.hidden = true;
+    if (!consent) banner.hidden = false;
+    syncBodyClass();
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function saveConsent(functional) {
+    consent = { v: 1, functional: !!functional, date: new Date().toISOString() };
+    try { localStorage.setItem(CONSENT_KEY, JSON.stringify(consent)); } catch (e) {}
+    applyConsent();
+    banner.hidden = true; modal.hidden = true; syncBodyClass();
+  }
+
+  document.querySelectorAll('[data-consent]').forEach(b => b.addEventListener('click', () => {
+    const a = b.dataset.consent;
+    if (a === 'accept') saveConsent(true);
+    else if (a === 'reject') saveConsent(false);
+    else if (a === 'save') saveConsent(fnSwitch.checked);
+    else if (a === 'customize') openModal();
   }));
+  document.getElementById('cmClose').addEventListener('click', closeModal);
+  document.getElementById('cookiePrefs').addEventListener('click', openModal);
+  document.getElementById('mapAllow').addEventListener('click', () => saveConsent(true));
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { e.stopPropagation(); closeModal(); return; }
+    if (e.key !== 'Tab') return;
+    const f = [...modal.querySelectorAll('button, a[href], input')].filter(el => el.offsetParent !== null);
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  // "Mostrar mais" e categorias que abrem/fecham
+  const moreBtn = document.getElementById('cmMore');
+  moreBtn.addEventListener('click', () => {
+    const open = moreBtn.getAttribute('aria-expanded') !== 'true';
+    moreBtn.setAttribute('aria-expanded', open);
+    document.getElementById('cmMoreText').hidden = !open;
+    moreBtn.children[0].hidden = open; moreBtn.children[1].hidden = !open;
+  });
+  document.querySelectorAll('.cm-cat-toggle').forEach(t => t.addEventListener('click', () => {
+    const open = t.getAttribute('aria-expanded') !== 'true';
+    t.setAttribute('aria-expanded', open);
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !open;
+  }));
+
+  applyConsent();
+  if (!consent) showBanner();
 </script>
 </body>
 </html>
