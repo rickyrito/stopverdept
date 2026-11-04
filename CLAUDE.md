@@ -61,6 +61,10 @@ Para ver localmente: `python3 -m http.server` na raiz e abrir http://localhost:8
   Não mencionar a fusão Pontelectro/Garepol.
 - Contactos (telefone, email, morada, horário) aparecem em vários sítios: barra do
   topo, faixa verde, secção Contactos e rodapé. Ao alterar um, alterar todos.
+- WhatsApp (telemóvel 960 219 587, link `https://wa.me/351960219587`) aparece na
+  barra do topo, na secção Contactos e no botão flutuante "Fale connosco"
+  (`.wa-float`, canto inferior direito, estilo copiado de artvisao.pt). O rodapé
+  tem `padding-bottom` extra para o botão não tapar o texto.
 - Sem formulários: o GitHub Pages não processa envios. Usar `tel:` e `mailto:`.
 
 ## Verificar antes de publicar

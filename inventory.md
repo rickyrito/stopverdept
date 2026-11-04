@@ -13,6 +13,7 @@ Legenda da origem: **Webnode** = veio do site antigo `stopverde.webnode.pt` ·
 | Nome | Stopverde, Lda. | Webnode |
 | Morada | Av. de São Pedro, Lote R-7 Loja A, 1675-129 Pontinha – Odivelas | Webnode |
 | Telefone | 214 794 122 | Webnode |
+| Telemóvel / WhatsApp | 960 219 587 (`wa.me/351960219587`) — barra do topo, Contactos, botão flutuante | Cliente |
 | Email | stopverde@sapo.pt | Webnode |
 | Facebook | https://www.facebook.com/Stopverde/ | Webnode |
 | Horário | Seg–Sex 8:30–18:30 (almoço 13:00–14:30) · Sáb 9:00–13:00 | Webnode |
