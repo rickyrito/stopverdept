@@ -212,6 +212,20 @@
       letter-spacing: .18em; text-transform: uppercase; color: var(--green); border: 1px solid var(--green); padding: 5px 12px;
     }
 
+    .partner-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px; }
+    .partner-list li {
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(255,255,255,.04); border: 1px solid #2a2f3a; padding: 12px 14px;
+      transition: border-color .2s;
+    }
+    .partner-list li:hover { border-color: var(--green); }
+    .pl-ic {
+      width: 42px; height: 42px; flex: none; border-radius: 50%; display: grid; place-items: center;
+      background: var(--green); color: #fff;
+    }
+    .pl-ic svg { width: 22px; height: 22px; }
+    .partner-list b { display: block; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; line-height: 1.2; }
+    .partner-list small { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--green); }
     .brands-title {
       text-align: center; margin: 56px 0 22px; color: #fff;
       font-size: .95rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase;
@@ -467,7 +481,16 @@
         <div class="partner">
           <h3>Seguradoras</h3>
           <p>As seguradoras com quem trabalhamos.</p>
-          <span class="soon">Em construção</span>
+          <ul class="partner-list">
+            <li>
+              <span class="pl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12a10 10 0 0 0-20 0Z"/><path d="M12 12v7a2 2 0 0 0 4 0"/><path d="M12 2v1"/></svg></span>
+              <span><b>Fidelidade</b><small>Seguros</small></span>
+            </li>
+            <li>
+              <span class="pl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12a10 10 0 0 0-20 0Z"/><path d="M12 12v7a2 2 0 0 0 4 0"/><path d="M12 2v1"/></svg></span>
+              <span><b>Allianz Auto</b><small>Seguros</small></span>
+            </li>
+          </ul>
         </div>
         <div class="partner">
           <h3>Fornecedores</h3>
@@ -476,7 +499,12 @@
         <div class="partner">
           <h3>Parcerias</h3>
           <p>Empresas e entidades parceiras da Stopverde.</p>
-          <span class="soon">Em construção</span>
+          <ul class="partner-list">
+            <li>
+              <span class="pl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span><b>DECO PROteste</b><small>Defesa do consumidor</small></span>
+            </li>
+          </ul>
         </div>
       </div>
 

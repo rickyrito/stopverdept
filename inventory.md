@@ -29,7 +29,18 @@ Legenda da origem: **Webnode** = veio do site antigo `stopverde.webnode.pt` ·
 | Serviços | `#servicos` | 8 serviços (lista abaixo) + "…e muito mais!" | Nomes: Webnode · Descrições: Novo | Validar descrições |
 | Faixa | — | "Tem um problema com o seu carro?" + telefone | Novo | ✅ |
 | Preços | `#precos` | "A parte que ninguém gosta": Preçómetro animado + luzes do painel (Mudanças de óleo, Revisões, Mão de obra/hora — todos "Sob consulta") + botões WhatsApp/Ligar | Itens: Webnode · Textos e animação: Novo | ⏳ Faltam preços · validar textos |
-| Seguradoras e Fornecedores | `#parceiros` | Seguradoras e Parcerias — "Em construção" · Fornecedores — remete para as marcas · Faixa "Marcas com que trabalhamos" | Webnode + Cliente | ⏳ Faltam seguradoras e parcerias |
+| Seguradoras e Fornecedores | `#parceiros` | Seguradoras: Fidelidade, Allianz Auto · Fornecedores: remete para as marcas · Parcerias: DECO PROteste · Faixa "Marcas com que trabalhamos" | Cliente | ✅ (logótipos por confirmar) |
+
+## Seguradoras e parcerias
+
+Indicadas pelo cliente. Cada uma tem um símbolo genérico desenhado para o site
+(não é o logótipo oficial).
+
+| Nome | Onde aparece | Símbolo |
+|---|---|---|
+| Fidelidade | Seguradoras | Guarda-chuva |
+| Allianz Auto | Seguradoras | Guarda-chuva |
+| DECO PROteste | Parcerias | Selo com visto |
 
 ## Marcas com que trabalham
 
@@ -73,8 +84,8 @@ histórico do Git (commit `6adcb2a`).
 
 - [ ] Preços de revisões, mudanças de óleo e mão de obra/hora (ou confirmar "Sob consulta")
 - [ ] Lista de seguradoras com quem trabalham
-- [ ] Lista de parcerias
-- [ ] Autorização para usar os logótipos oficiais das marcas (Bosch, Liqui Moly, Osram, Michelin, Monroe) — ex.: material de distribuidor/oficina aderente
+- [ ] Confirmar a relação com a DECO PROteste (o que se pode dizer publicamente)
+- [ ] Autorização para usar os logótipos oficiais das marcas (Fidelidade, Allianz, DECO PROteste, Bosch, Liqui Moly, Osram, Michelin, Monroe) — ex.: material de distribuidor/oficina aderente
 - [ ] Confirmar a categoria da Bosch (está "Peças auto")
 - [ ] Fotografias reais da oficina, da equipa e de trabalhos feitos (para o topo e as secções)
 - [ ] Validar os textos marcados como **Novo**
