@@ -105,9 +105,11 @@
     .about-statement b { color: var(--green); font-weight: 800; }
     .about-text { max-width: 760px; margin: 28px auto 0; text-align: center; font-size: 1.05rem; }
     .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; background: #2a2f3a; }
-    .value { background: var(--dark-2); padding: 34px 20px; text-align: center; }
-    .value .num { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 2.4rem; color: var(--green); line-height: 1; }
-    .value h3 { text-transform: uppercase; font-size: 1.05rem; letter-spacing: .08em; margin-top: 12px; }
+    .value { background: var(--dark-2); padding: 40px 20px; text-align: center; }
+    .value img { display: block; width: 96px; height: 96px; margin: 0 auto 18px; transition: transform .2s; }
+    .value:hover img { transform: scale(1.08); }
+    .value h3 { text-transform: uppercase; font-size: 1.15rem; letter-spacing: .08em; }
+    .value p { margin: 6px 0 0; color: #9e9fa1; }
 
     /* Services */
     .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
@@ -254,9 +256,9 @@
       <p class="about-statement">A <b>Pontelectro</b> e a <b>Garepol</b> fundiram-se numa nova e única empresa que foi baptizada de <b>STOPVERDE</b>!</p>
       <p class="about-text">Mais moderna, com maiores recursos e profissionais especializados, para poder prestar um serviço de excelência ao cliente — sempre com o preço mais justo do mercado.</p>
       <div class="values">
-        <div class="value"><div class="num">01</div><h3>Confiança</h3></div>
-        <div class="value"><div class="num">02</div><h3>Simpatia</h3></div>
-        <div class="value"><div class="num">03</div><h3>Garantia de qualidade</h3></div>
+        <div class="value"><img src="assets/valores/confianca.svg" alt="Aperto de mão" width="96" height="96"><h3>Confiança</h3><p>Trabalho transparente</p></div>
+        <div class="value"><img src="assets/valores/simpatia.svg" alt="Cara sorridente com coração" width="96" height="96"><h3>Simpatia</h3><p>Atendimento próximo</p></div>
+        <div class="value"><img src="assets/valores/qualidade.svg" alt="Medalha de qualidade" width="96" height="96"><h3>Qualidade</h3><p>Serviço garantido</p></div>
       </div>
     </div>
   </section>
