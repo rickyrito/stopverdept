@@ -160,11 +160,46 @@
     .band .btn:hover { background: #fff; color: var(--black); }
 
     /* Prices */
-    .prices { max-width: 760px; margin: 0 auto; background: #fff; border-top: 4px solid var(--green); box-shadow: 0 12px 40px rgba(0,0,0,.06); }
-    .price-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 30px; border-bottom: 1px solid var(--line); }
-    .price-row:last-child { border-bottom: 0; }
-    .price-row h3 { font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
-    .price-row span { font-family: "Poppins", sans-serif; font-weight: 600; color: var(--green-dark); white-space: nowrap; }
+    .prices-fun { display: grid; grid-template-columns: .9fr 1.1fr; gap: 32px; align-items: center; max-width: 1000px; margin: 0 auto; }
+    .gauge-card { background: #fff; border-top: 4px solid var(--green); box-shadow: 0 12px 40px rgba(0,0,0,.06); padding: 34px 26px 28px; text-align: center; }
+    .gauge { display: block; width: 100%; max-width: 340px; margin: 0 auto; overflow: visible; }
+    .gauge text { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 13px; fill: var(--black); }
+    .needle { transform-box: view-box; transform-origin: 100px 100px; transform: rotate(-85deg); }
+    .gauge.on .needle { animation: needle 2.4s ease-out forwards; }
+    @keyframes needle {
+      0% { transform: rotate(-85deg); }
+      30% { transform: rotate(-30deg); }
+      50% { transform: rotate(78deg); }
+      66% { transform: rotate(50deg); }
+      80% { transform: rotate(66deg); }
+      100% { transform: rotate(60deg); }
+    }
+    .gauge-title { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.3rem; text-transform: uppercase; color: var(--black); margin-top: 14px; }
+    .gauge-card p { margin: 4px 0 0; color: var(--muted); }
+    .lights { display: grid; gap: 14px; }
+    .light { display: flex; align-items: center; gap: 18px; background: var(--dark); padding: 20px 22px; }
+    .lamp {
+      width: 54px; height: 54px; flex: none; border-radius: 50%; display: grid; place-items: center;
+      color: var(--c); border: 1px solid var(--g); background: rgba(255,255,255,.03); box-shadow: 0 0 18px var(--g);
+    }
+    .lamp svg { width: 26px; height: 26px; }
+    .lights.on .light .lamp { animation: blink .45s 3; }
+    .lights.on .light:nth-child(2) .lamp { animation-delay: .25s; }
+    .lights.on .light:nth-child(3) .lamp { animation-delay: .5s; }
+    .light:hover .lamp { animation: blink .45s 2; }
+    @keyframes blink { 50% { opacity: .2; box-shadow: none; } }
+    .light .q { color: #9e9fa1; font-size: .88rem; }
+    .light h3 { color: #fff; font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .light .val { margin-left: auto; font-family: "Poppins", sans-serif; font-weight: 600; color: var(--green); white-space: nowrap; }
+    .prices-note { text-align: center; color: var(--muted); max-width: 620px; margin: 36px auto 0; }
+    .btn-wa { background: #25D366; color: var(--black); }
+    .btn-wa:hover { background: #1ebe5a; }
+    .btn-dark { background: var(--black); color: #fff; }
+    .btn-dark:hover { background: var(--green); }
+    @media (prefers-reduced-motion: reduce) {
+      .needle, .gauge.on .needle { animation: none; transform: rotate(60deg); }
+      .lights.on .light .lamp, .light:hover .lamp { animation: none; }
+    }
 
     /* Partners */
     .partners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -201,6 +236,7 @@
     @media (max-width: 1000px) {
       .services { grid-template-columns: repeat(2, 1fr); }
       .partners { grid-template-columns: 1fr; }
+      .prices-fun { grid-template-columns: 1fr; }
       .contact { grid-template-columns: 1fr; }
     }
     @media (max-width: 820px) {
@@ -219,7 +255,8 @@
     @media (max-width: 560px) {
       .services, .values { grid-template-columns: 1fr; }
       .contact-info { padding: 32px 22px; }
-      .price-row { padding: 18px 20px; }
+      .light { flex-wrap: wrap; gap: 14px; padding: 18px; }
+      .light .val { margin-left: 72px; }
       .band .wrap { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -231,7 +268,7 @@
     <span><strong>Oficina multimarcas</strong> <span class="hide-sm">· Seg–Sex 8:30–18:30 · Sáb 9:00–13:00</span></span>
     <span class="topbar-links">
       <a href="tel:+351214794122">☎ 214 794 122</a>
-      <a href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a>
+      <a href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><circle cx="12" cy="12" r="2.2"/><path d="M4.6 10.2c2.2.9 4.6 1.3 5.2 1.3M14.2 11.5c.6 0 3-.4 5.2-1.3M12 14.2v5.2"/></svg>WhatsApp</a>
     </span>
   </div>
 </div>
@@ -354,15 +391,51 @@
   <section id="precos" class="grey">
     <div class="wrap">
       <div class="head">
-        <div class="eyebrow">Tabela</div>
-        <h2>Serviços e preços</h2>
+        <div class="eyebrow">Preços</div>
+        <h2>A parte que ninguém gosta</h2>
         <div class="bar"></div>
-        <p>A tabela de preços está a ser atualizada. Contacte-nos para um orçamento.</p>
+        <p>Sabemos que é a secção que todos saltam. Por isso, vamos ser rápidos — e justos.</p>
       </div>
-      <div class="prices">
-        <div class="price-row"><h3>Revisões</h3><span>Sob consulta</span></div>
-        <div class="price-row"><h3>Mudanças de óleo</h3><span>Sob consulta</span></div>
-        <div class="price-row"><h3>Mão de obra / hora</h3><span>Sob consulta</span></div>
+      <div class="prices-fun">
+        <div class="gauge-card">
+          <svg class="gauge" viewBox="-26 -16 252 128" role="img" aria-label="Preçómetro: o ponteiro vai de Ai! até Justo">
+            <path d="M20 100 A80 80 0 0 1 60 30.7" fill="none" stroke="#e30613" stroke-width="18"/>
+            <path d="M60 30.7 A80 80 0 0 1 140 30.7" fill="none" stroke="#f5b800" stroke-width="18"/>
+            <path d="M140 30.7 A80 80 0 0 1 180 100" fill="none" stroke="#1fbf43" stroke-width="18"/>
+            <text x="2" y="44" text-anchor="middle">Ai!</text>
+            <text x="100" y="-2" text-anchor="middle">Hmm…</text>
+            <text x="200" y="44" text-anchor="middle" fill="#179a35" style="fill:#179a35">Justo</text>
+            <g class="needle">
+              <line x1="100" y1="100" x2="100" y2="34" stroke="#0e0e0f" stroke-width="5" stroke-linecap="round"/>
+            </g>
+            <circle cx="100" cy="100" r="10" fill="#0e0e0f"/>
+            <circle cx="100" cy="100" r="4" fill="#1fbf43"/>
+          </svg>
+          <div class="gauge-title">Preçómetro Stopverde</div>
+          <p>O ponteiro aponta sempre para o mesmo lado.</p>
+        </div>
+        <div class="lights">
+          <div class="light" style="--c:#f5b800; --g:rgba(245,184,0,.45)">
+            <div class="lamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h9l3 3h3l4-3-4 7H6a3 3 0 0 1-3-3z"/><path d="M7 11V8h4"/><path d="M21 15.5c0 .8-.5 1.5-1 1.5"/></svg></div>
+            <div><div class="q">A luz do óleo acendeu?</div><h3>Mudanças de óleo</h3></div>
+            <span class="val">Sob consulta</span>
+          </div>
+          <div class="light" style="--c:#ff8a00; --g:rgba(255,138,0,.45)">
+            <div class="lamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <div><div class="q">Chegou a hora da revisão?</div><h3>Revisões</h3></div>
+            <span class="val">Sob consulta</span>
+          </div>
+          <div class="light" style="--c:#1fbf43; --g:rgba(31,191,67,.45)">
+            <div class="lamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></svg></div>
+            <div><div class="q">Quanto custa uma hora connosco?</div><h3>Mão de obra / hora</h3></div>
+            <span class="val">Sob consulta</span>
+          </div>
+        </div>
+      </div>
+      <p class="prices-note">Os preços dependem do modelo e do estado do carro. Diga-nos qual é e damos-lhe o valor certo.</p>
+      <div class="cta">
+        <a class="btn btn-wa" href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer">Pedir orçamento no WhatsApp</a>
+        <a class="btn btn-dark" href="tel:+351214794122">Ligar 214 794 122</a>
       </div>
     </div>
   </section>
@@ -443,7 +516,7 @@
 
 <a href="https://wa.me/351960219587" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Fale connosco via WhatsApp" title="Contactar via WhatsApp">
   <span class="wa-float-badge">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><circle cx="12" cy="12" r="2.2"/><path d="M4.6 10.2c2.2.9 4.6 1.3 5.2 1.3M14.2 11.5c.6 0 3-.4 5.2-1.3M12 14.2v5.2"/></svg>
   </span>
   <span class="wa-float-text">Fale connosco</span>
 </a>
@@ -456,6 +529,16 @@
     const open = menu.classList.toggle('open');
     btn.setAttribute('aria-expanded', open);
   });
+  // Preçómetro e luzes do painel: animam quando a secção aparece
+  const fun = document.querySelectorAll('.gauge, .lights');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    }), { threshold: 0.5 });
+    fun.forEach(el => io.observe(el));
+  } else {
+    fun.forEach(el => el.classList.add('on'));
+  }
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded', 'false');

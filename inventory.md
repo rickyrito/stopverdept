@@ -28,7 +28,7 @@ Legenda da origem: **Webnode** = veio do site antigo `stopverde.webnode.pt` ·
 | Valores | `#sobre` | Confiança (Trabalho transparente), Simpatia (Atendimento próximo), Qualidade (Serviço garantido) | Novo, frases dadas pelo cliente | ✅ |
 | Serviços | `#servicos` | 8 serviços (lista abaixo) + "…e muito mais!" | Nomes: Webnode · Descrições: Novo | Validar descrições |
 | Faixa | — | "Tem um problema com o seu carro?" + telefone | Novo | ✅ |
-| Preços | `#precos` | Revisões, Mudanças de óleo, Mão de obra/hora — todos "Sob consulta" | Webnode (tabela vazia) | ⏳ Faltam preços |
+| Preços | `#precos` | "A parte que ninguém gosta": Preçómetro animado + luzes do painel (Mudanças de óleo, Revisões, Mão de obra/hora — todos "Sob consulta") + botões WhatsApp/Ligar | Itens: Webnode · Textos e animação: Novo | ⏳ Faltam preços · validar textos |
 | Seguradoras e Fornecedores | `#parceiros` | Seguradoras, Fornecedores, Parcerias — "Em construção" | Webnode | ⏳ Faltam listas |
 | Contactos | `#contactos` | Telefone, morada, email, Facebook, horário, mapa Google | Webnode | ✅ |
 

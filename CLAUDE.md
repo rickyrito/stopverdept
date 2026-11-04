@@ -65,6 +65,11 @@ Para ver localmente: `python3 -m http.server` na raiz e abrir http://localhost:8
   barra do topo, na secção Contactos e no botão flutuante "Fale connosco"
   (`.wa-float`, canto inferior direito, estilo copiado de artvisao.pt). O rodapé
   tem `padding-bottom` extra para o botão não tapar o texto.
+  O ícone do WhatsApp é o balão de conversa com um **volante** lá dentro
+  ("conduzimos o seu problema até à solução"); manter este ícone em todos os sítios.
+- A secção Preços é propositadamente divertida ("A parte que ninguém gosta"):
+  Preçómetro animado (ponteiro de Ai! até Justo) e serviços como luzes do painel
+  que piscam ao entrar no ecrã. Respeita `prefers-reduced-motion`.
 - Sem formulários: o GitHub Pages não processa envios. Usar `tel:` e `mailto:`.
 
 ## Verificar antes de publicar
