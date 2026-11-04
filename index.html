@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stopverde · Serviços Auto na Pontinha</title>
+  <meta name="description" content="Stopverde – oficina multimarcas na Pontinha, Odivelas. Revisões, chapa e pintura, correias de distribuição, embraiagens, mudanças de óleo e inspeções.">
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1fa83a;
+      --green-dark: #168a2e;
+      --red: #c8102e;
+      --ink: #15181c;
+      --ink-2: #22262c;
+      --text: #2a2f36;
+      --muted: #5f6873;
+      --line: #e3e6ea;
+      --bg: #ffffff;
+      --bg-alt: #f4f6f8;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    h1, h2, h3 {
+      font-family: "Barlow Condensed", "Inter", sans-serif;
+      line-height: 1.05;
+      margin: 0 0 .5em;
+      color: var(--ink);
+      letter-spacing: .01em;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(21, 24, 28, .96);
+      backdrop-filter: blur(6px);
+      color: #fff;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 800; font-size: 1.7rem; text-decoration: none; letter-spacing: .02em;
+    }
+    .brand .stop { color: #ff3b4f; }
+    .brand .verde { color: #3ddc5a; }
+    .nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
+    .nav ul a { text-decoration: none; font-size: .93rem; font-weight: 500; opacity: .85; }
+    .nav ul a:hover { opacity: 1; color: #3ddc5a; }
+    .menu-btn {
+      display: none; background: none; border: 0; color: #fff; font-size: 1.6rem; cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(31,168,58,.25), transparent 45%),
+        linear-gradient(160deg, var(--ink) 0%, var(--ink-2) 100%);
+      color: #fff;
+      padding: 72px 0 84px;
+    }
+    .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+    .tag {
+      display: inline-block; background: var(--green); color: #fff;
+      font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .hero h1 { color: #fff; font-size: clamp(2.6rem, 6vw, 4.4rem); text-transform: uppercase; }
+    .hero h1 span { color: #3ddc5a; }
+    .hero p { font-size: 1.1rem; color: #c9cfd6; max-width: 520px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; border-radius: 10px; font-weight: 600; text-decoration: none;
+      transition: transform .15s, background .15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,.35); color: #fff; }
+    .btn-ghost:hover { border-color: #fff; }
+    .hero-card {
+      background: #fff; border-radius: 20px; padding: 18px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.35);
+    }
+    .hero-card img { display: block; width: 100%; height: auto; border-radius: 12px; }
+
+    /* Sections */
+    section { padding: 84px 0; }
+    section.alt { background: var(--bg-alt); }
+    .eyebrow {
+      color: var(--green-dark); font-weight: 600; font-size: .82rem;
+      letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .section-head { max-width: 640px; margin-bottom: 40px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); text-transform: uppercase; }
+    .section-head p { color: var(--muted); margin: 0; }
+
+    .grid { display: grid; gap: 18px; }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .card {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px;
+    }
+    .service { display: flex; flex-direction: column; gap: 12px; transition: border-color .15s, box-shadow .15s; }
+    .service:hover { border-color: var(--green); box-shadow: 0 10px 24px rgba(31,168,58,.12); }
+    .icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: rgba(31,168,58,.12); color: var(--green-dark);
+      display: grid; place-items: center;
+    }
+    .icon svg { width: 24px; height: 24px; }
+    .service h3 { font-size: 1.35rem; margin: 0; }
+
+    /* About */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .about p { font-size: 1.05rem; }
+    .merge { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 24px; }
+    .merge .pill {
+      background: var(--bg-alt); border: 1px solid var(--line); border-radius: 999px;
+      padding: 8px 16px; font-weight: 600; font-size: .95rem;
+    }
+    .merge .arrow { color: var(--muted); font-weight: 600; }
+    .merge .result {
+      background: var(--ink); color: #fff; border-radius: 999px; padding: 8px 18px;
+      font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: .03em;
+    }
+    .merge .result b:first-child { color: #ff3b4f; }
+    .merge .result b:last-child { color: #3ddc5a; }
+    .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .value { text-align: center; padding: 26px 14px; }
+    .value strong {
+      display: block; font-family: "Barlow Condensed", sans-serif; font-size: 1.5rem;
+      text-transform: uppercase; color: var(--ink);
+    }
+    .value span { color: var(--muted); font-size: .9rem; }
+
+    /* Prices */
+    .price { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .price h3 { font-size: 1.4rem; margin: 0; }
+    .price .amount {
+      font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 1.05rem;
+      color: var(--green-dark); background: rgba(31,168,58,.1);
+      padding: 6px 12px; border-radius: 8px; white-space: nowrap;
+    }
+    .note { margin-top: 18px; color: var(--muted); font-size: .95rem; }
+
+    /* Partners */
+    .partner { border-top: 4px solid var(--green); }
+    .partner:nth-child(2) { border-top-color: var(--red); }
+    .partner:nth-child(3) { border-top-color: var(--ink); }
+    .partner h3 { font-size: 1.5rem; }
+    .partner p { color: var(--muted); margin: 0; }
+    .soon {
+      display: inline-block; margin-top: 14px; font-size: .78rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+      border: 1px dashed var(--line); padding: 4px 10px; border-radius: 6px;
+    }
+
+    /* Contact */
+    .contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; }
+    .contact-list { display: grid; gap: 14px; }
+    .contact-item { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-item .icon { flex: none; }
+    .contact-item h3 { font-size: 1.15rem; margin: 0 0 2px; text-transform: uppercase; }
+    .contact-item p { margin: 0; color: var(--muted); }
+    .contact-item a { color: var(--text); font-weight: 600; text-decoration: none; }
+    .contact-item a:hover { color: var(--green-dark); }
+    .hours { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    .hours td { padding: 4px 0; color: var(--muted); }
+    .hours td:last-child { text-align: right; color: var(--text); font-weight: 500; }
+    .map {
+      border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
+      min-height: 380px; background: var(--bg-alt);
+    }
+    .map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; }
+
+    footer { background: var(--ink); color: #9aa3ad; padding: 36px 0; font-size: .9rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    /* Responsive */
+    @media (max-width: 920px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: 1fr; }
+      .hero .wrap, .about, .contact { grid-template-columns: 1fr; }
+      .hero-card { max-width: 460px; }
+    }
+    @media (max-width: 720px) {
+      .menu-btn { display: block; }
+      .nav ul {
+        display: none; position: absolute; top: 64px; left: 0; right: 0;
+        flex-direction: column; gap: 0; background: var(--ink); padding: 8px 0;
+      }
+      .nav ul.open { display: flex; }
+      .nav ul a { display: block; padding: 12px 20px; }
+      section { padding: 60px 0; }
+      .hero { padding: 48px 0 60px; }
+      .wrap { padding: 0 16px; }
+    }
+    @media (max-width: 480px) {
+      .grid-4, .values { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#inicio" class="brand"><span class="stop">STOP</span><span class="verde">VERDE</span></a>
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <ul id="menu">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#sobre">Sobre Nós</a></li>
+      <li><a href="#precos">Preços</a></li>
+      <li><a href="#parceiros">Seguradoras e Fornecedores</a></li>
+      <li><a href="#contactos">Contactos</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="hero" id="inicio">
+    <div class="wrap">
+      <div>
+        <span class="tag">Oficina Multimarcas · Pontinha</span>
+        <h1>Serviços auto <span>com confiança</span></h1>
+        <p>Revisões, chapa e pintura, distribuição, embraiagens e muito mais — para todas as marcas, com o preço mais justo do mercado.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="tel:+351214794122">📞 Ligar 214 794 122</a>
+          <a class="btn btn-ghost" href="#contactos">Como chegar</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="assets/logo.jpg" alt="Logótipo Stopverde Serviços Auto" width="1247" height="891">
+      </div>
+    </div>
+  </div>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">O que fazemos</div>
+        <h2>Serviços</h2>
+        <p>Tratamos do seu carro, seja qual for a marca.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <h3>Revisões Gerais</h3>
+        </div>
+        <div class="card service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11h-6V5"/><path d="M5 19l6-6"/><rect x="13" y="3" width="8" height="8" rx="1"/><path d="M3 21l2-2"/></svg></div>
+          <h3>Chapa e Pintura</h3>
+        </div>
+        <div class="card service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M6 9h12M6 15h12"/></svg></div>
+          <h3>Correias de Distribuição</h3>
+        </div>
+        <div class="card service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+          <h3>Kits de Embraiagem</h3>
+        </div>
+        <div class="card service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7C12 2.7 6 9.5 6 14a6 6 0 0 0 12 0c0-4.5-6-11.3-6-11.3z"/></svg></div>
+          <h3>Mudanças de Óleo</h3>
+        </div>
+        <div class="card service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3>Serviços Rápidos</h3>
+        </div>
+        <div class="card service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>
+          <h3>Focagem de Faróis</h3>
+        </div>
+        <div class="card service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Inspeções</h3>
+        </div>
+      </div>
+      <p class="note">…e muito mais! Fale connosco sobre o que o seu carro precisa.</p>
+    </div>
+  </section>
+
+  <section id="sobre" class="alt">
+    <div class="wrap about">
+      <div>
+        <div class="eyebrow">Quem somos</div>
+        <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); text-transform: uppercase;">Sobre Nós</h2>
+        <div class="merge">
+          <span class="pill">Pontelectro</span>
+          <span class="arrow">+</span>
+          <span class="pill">Garepol</span>
+          <span class="arrow">=</span>
+          <span class="result"><b>STOP</b><b>VERDE</b></span>
+        </div>
+        <p>A Pontelectro e a Garepol fundiram-se numa nova e única empresa que foi baptizada de <strong>STOPVERDE</strong>! Mais moderna, com maiores recursos e profissionais especializados, para poder prestar um serviço de excelência ao cliente.</p>
+        <p>Esta parceria tem como lema confiança, simpatia e garantia de qualidade nos serviços prestados, sempre com o preço mais justo do mercado.</p>
+      </div>
+      <div class="values">
+        <div class="card value"><strong>Confiança</strong><span>Trabalho transparente</span></div>
+        <div class="card value"><strong>Simpatia</strong><span>Atendimento próximo</span></div>
+        <div class="card value"><strong>Qualidade</strong><span>Serviço garantido</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="precos">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Tabela</div>
+        <h2>Serviços e Preços</h2>
+        <p>A tabela de preços está a ser atualizada. Peça já o seu orçamento sem compromisso.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card price"><h3>Revisões</h3><span class="amount">Sob consulta</span></div>
+        <div class="card price"><h3>Mudanças de óleo</h3><span class="amount">Sob consulta</span></div>
+        <div class="card price"><h3>Mão de obra / hora</h3><span class="amount">Sob consulta</span></div>
+      </div>
+      <div class="cta">
+        <a class="btn btn-primary" href="tel:+351214794122">Pedir orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="parceiros" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Rede</div>
+        <h2>Seguradoras e Fornecedores</h2>
+        <p>Trabalhamos com seguradoras, fornecedores e parceiros para lhe dar a melhor resposta.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card partner">
+          <h3>Seguradoras</h3>
+          <p>Lista de seguradoras com quem trabalhamos.</p>
+          <span class="soon">Em construção</span>
+        </div>
+        <div class="card partner">
+          <h3>Fornecedores</h3>
+          <p>Os fornecedores de peças e materiais que nos acompanham.</p>
+          <span class="soon">Em construção</span>
+        </div>
+        <div class="card partner">
+          <h3>Parcerias</h3>
+          <p>Empresas e entidades parceiras da Stopverde.</p>
+          <span class="soon">Em construção</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contactos">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Fale connosco</div>
+        <h2>Contactos</h2>
+      </div>
+      <div class="contact">
+        <div class="contact-list">
+          <div class="card contact-item">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <h3>Morada</h3>
+              <p>Stopverde, Lda.<br>Av. de São Pedro, Lote R-7 Loja A<br>1675-129 Pontinha – Odivelas</p>
+            </div>
+          </div>
+          <div class="card contact-item">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+            <div>
+              <h3>Telefone e email</h3>
+              <p><a href="tel:+351214794122">214 794 122</a><br><a href="mailto:stopverde@sapo.pt">stopverde@sapo.pt</a><br><a href="https://www.facebook.com/Stopverde/" target="_blank" rel="noopener">facebook.com/Stopverde</a></p>
+            </div>
+          </div>
+          <div class="card contact-item">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div style="flex:1">
+              <h3>Horário</h3>
+              <table class="hours">
+                <tr><td>Segunda a Sexta</td><td>8:30 – 18:30</td></tr>
+                <tr><td>Almoço (encerrado)</td><td>13:00 – 14:30</td></tr>
+                <tr><td>Sábado</td><td>9:00 – 13:00</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="map">
+          <iframe title="Mapa – Stopverde, Pontinha" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Av.+de+S%C3%A3o+Pedro+Lote+R-7,+1675-129+Pontinha&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Stopverde, Lda. · Serviços Auto</span>
+    <span>Av. de São Pedro, Lote R-7 Loja A, Pontinha · <a href="tel:+351214794122">214 794 122</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const btn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('menu');
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+</body>
+</html>
