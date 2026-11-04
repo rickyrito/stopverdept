@@ -23,17 +23,20 @@ Legenda da origem: **Webnode** = veio do site antigo `stopverde.webnode.pt` ·
 
 | Secção | Âncora | Conteúdo | Origem | Estado |
 |---|---|---|---|---|
-| Topo | `#inicio` | Sinal STOP verde, "Oficina Multimarcas · Pontinha", título "O seu carro em boas mãos", frase de apresentação, botões Ligar / Serviços | Novo | Validar texto |
+| Topo | `#inicio` | Sinal STOP verde, "Oficina Multimarcas · Pontinha", título "O seu carro em boas mãos.", símbolo STOP verde em destaque, frase de apresentação, botões Ligar / Explorar serviços e faixa de morada | Novo | Validar texto |
 | Quem Somos | `#sobre` | "A sua oficina de sempre" + texto sobre continuidade e confiança | Novo | Validar texto |
 | Valores | `#sobre` | Confiança (Trabalho transparente), Simpatia (Atendimento próximo), Qualidade (Serviço garantido) | Novo, frases dadas pelo cliente | ✅ |
 | Serviços | `#servicos` | 8 serviços (lista abaixo) + "…e muito mais!" | Nomes: Webnode · Descrições: Novo | Validar descrições |
 | Faixa | — | "Tem um problema com o seu carro?" + telefone | Novo | ✅ |
 | Preços | `#precos` | "A parte que ninguém gosta": Preçómetro animado + luzes do painel (Mudanças de óleo, Revisões, Mão de obra/hora — todos "Sob consulta") + botões WhatsApp/Ligar | Itens: Webnode · Textos e animação: Novo | ⏳ Faltam preços · validar textos |
 | Seguradoras e Fornecedores | `#parceiros` | Seguradoras: Fidelidade, Allianz Auto · Fornecedores: remete para as marcas · Parcerias: DECO PROteste · Faixa "Marcas com que trabalhamos" | Cliente | ✅ (logótipos por confirmar) |
+| Contactos | `#contactos` | Telefone, morada, email, Facebook, horário, mapa Google | Webnode | ✅ |
 
 ## Seguradoras e parcerias
 
-Indicadas pelo cliente. Mostradas com o logótipo oficial.
+Indicadas pelo cliente. Mostradas com o logótipo oficial, a pedido do cliente;
+a autorização de utilização dos logótipos e o âmbito público da parceria DECO
+continuam pendentes de confirmação.
 
 | Nome | Onde aparece | Logótipo |
 |---|---|---|
@@ -52,7 +55,6 @@ Indicadas pelo cliente. Logótipos oficiais em `assets/marcas/` (Wikimedia Commo
 | Osram | Iluminação |
 | Michelin | Pneus |
 | Monroe | Amortecedores |
-| Contactos | `#contactos` | Telefone, morada, email, Facebook, horário, mapa Google | Webnode | ✅ |
 
 ## Serviços
 
@@ -82,7 +84,7 @@ histórico do Git (commit `6adcb2a`).
 ## Pendentes — pedir ao dono
 
 - [ ] Preços de revisões, mudanças de óleo e mão de obra/hora (ou confirmar "Sob consulta")
-- [ ] Lista de seguradoras com quem trabalham
+- [x] Lista de seguradoras indicada pelo cliente: Fidelidade e Allianz Auto
 - [ ] Confirmar a relação com a DECO PROteste (o que se pode dizer publicamente)
 - [ ] Confirmar autorização para os logótipos oficiais (já estão no site, a pedido do cliente) das marcas (Fidelidade, Allianz, DECO PROteste, Bosch, Liqui Moly, Osram, Michelin, Monroe) — ex.: material de distribuidor/oficina aderente
 - [ ] Confirmar a categoria da Bosch (está "Peças auto")
@@ -96,4 +98,10 @@ histórico do Git (commit `6adcb2a`).
 
 - Site em **português e inglês** (botão PT/EN no cabeçalho; `?lang=en` abre em inglês). Textos em inglês: Novo — validar.
 - **Consentimento de cookies** (banner + preferências; Necessário / Funcional). O mapa da Google só aparece com consentimento.
-- **Responsivo** testado de 320px a 1280px, nas duas línguas.
+- **Design atualizado:** topo assimétrico com símbolo original, serviços numerados, fundos claros e verde-carvão, contactos em destaque.
+- **Responsivo:** regras para computador e telemóvel implementadas; validar visualmente a nova composição de 320px a 1280px nas duas línguas antes de publicar.
+
+## Melhorias técnicas pendentes
+
+- [ ] Alojar Poppins e Roboto localmente; atualmente o Google Fonts carrega antes da escolha de consentimento.
+- [ ] Acrescentar dados estruturados da oficina, metadados de partilha social e definir o URL canónico.
