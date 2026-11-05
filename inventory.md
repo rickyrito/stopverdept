@@ -1,7 +1,7 @@
 # Inventário — site Stopverde
 
 Estado do conteúdo do site https://rickyrito.github.io/stopverdept/ e o que falta
-pedir ao dono da oficina. Atualizado a 4 de novembro de 2026.
+pedir ao dono da oficina. Atualizado a 5 de novembro de 2026.
 
 Legenda da origem: **Webnode** = veio do site antigo `stopverde.webnode.pt` ·
 **Novo** = texto escrito para o site novo (o dono deve validar).
@@ -29,8 +29,31 @@ Legenda da origem: **Webnode** = veio do site antigo `stopverde.webnode.pt` ·
 | Serviços | `#servicos` | 8 serviços (lista abaixo) + "…e muito mais!" | Nomes: Webnode · Descrições: Novo | Validar descrições |
 | Faixa | — | "Tem um problema com o seu carro?" + telefone | Novo | ✅ |
 | Preços | `#precos` | "A parte que ninguém gosta": Preçómetro animado + luzes do painel (Mudanças de óleo, Revisões, Mão de obra/hora — todos "Sob consulta") + botões WhatsApp/Ligar | Itens: Webnode · Textos e animação: Novo | ⏳ Faltam preços · validar textos |
-| Seguradoras e Fornecedores | `#parceiros` | Seguradoras: Fidelidade, Allianz Auto · Fornecedores: remete para as marcas · Parcerias: DECO PROteste · Faixa "Marcas com que trabalhamos" | Cliente | ✅ (logótipos por confirmar) |
+| Rede e Parcerias | `#parceiros` | Apresentação da rede InterGarage e grelha com 27 logótipos dos parceiros · Seguradoras: Fidelidade, Allianz Auto · Parcerias: DECO PROteste | Cliente e site oficial InterGarage | Adesão e apresentação dos parceiros indicadas pelo cliente; autorizações dos logótipos por confirmar |
 | Contactos | `#contactos` | Telefone, morada, email, Facebook, horário, mapa Google | Webnode | ✅ |
+
+## Rede InterGarage
+
+A adesão da Stopverde à rede foi confirmada pelo cliente em 5 de novembro de
+2026, com captura da listagem «STOPVERDE» no site oficial. A apresentação da
+rede e as marcas parceiras foram consultadas em https://www.intergarage.pt/
+nessa data. O site da Stopverde inclui a explicação em PT/EN e uma ligação
+para a InterGarage, além de uma referência na secção Quem Somos.
+
+Marcas listadas pela rede: APLUS, Blue Print, Bosch, Delphi, DELS, ELF, Gates,
+Geimex, IADA, MANN-FILTER, MANNOL, Mecafilter, NAPA, NRF, Purflux, Schaeffler
+Group, Shell, SKF, SWAG, TAB, Total Lubricants, TRW, Valeo, Valvoline,
+Veneporte, Wolf e ZF. São apresentadas como **parceiras da rede**, sem afirmar
+uma relação direta individual de cada marca com a Stopverde. A pedido do
+cliente, os nomes foram substituídos pelos 27 logótipos apresentados no site
+oficial da rede, guardados localmente em [assets/marcas/intergarage/](assets/marcas/intergarage/).
+Os endereços de origem e as dimensões estão em [sources.json](assets/marcas/intergarage/sources.json).
+Não há carregamento de imagens de terceiros durante a visita ao site.
+
+A captura enviada apresenta um horário diferente: segunda a sexta,
+09:00–13:00 e 16:00–18:00. O horário atual da Stopverde foi mantido até
+confirmação do cliente; a captura não foi usada para substituir os contactos
+ou a morada do site.
 
 ## Seguradoras e parcerias
 
@@ -44,17 +67,13 @@ continuam pendentes de confirmação.
 | Allianz Auto | Seguradoras | `assets/marcas/allianz.svg` (Wikimedia) |
 | DECO PROteste | Parcerias | `assets/marcas/deco.svg` (site oficial) |
 
-## Marcas com que trabalham
+## Blocos substituídos
 
-Indicadas pelo cliente. Logótipos oficiais em `assets/marcas/` (Wikimedia Commons).
-
-| Marca | Categoria no site |
-|---|---|
-| Bosch | Peças auto |
-| Liqui Moly | Óleos |
-| Osram | Iluminação |
-| Michelin | Pneus |
-| Monroe | Amortecedores |
+Em 5 de novembro de 2026, por pedido do cliente, foram retirados do site o
+bloco «Fornecedores» e a lista «Marcas com que trabalhamos» (Bosch, Liqui Moly,
+Osram, Michelin e Monroe). A grelha «Parceiros InterGarage» apresenta os
+parceiros da rede. Bosch surge apenas nessa qualidade. Os ficheiros antigos
+continuam no repositório, sem utilização na página.
 
 ## Serviços
 
@@ -85,9 +104,10 @@ histórico do Git (commit `6adcb2a`).
 
 - [ ] Preços de revisões, mudanças de óleo e mão de obra/hora (ou confirmar "Sob consulta")
 - [x] Lista de seguradoras indicada pelo cliente: Fidelidade e Allianz Auto
+- [x] Adesão à rede InterGarage confirmada pelo cliente; apresentação e marcas da rede acrescentadas em PT/EN
+- [ ] Confirmar o horário atual: a listagem InterGarage enviada pelo cliente diverge do horário no site da Stopverde
 - [ ] Confirmar a relação com a DECO PROteste (o que se pode dizer publicamente)
-- [ ] Confirmar autorização para os logótipos oficiais (já estão no site, a pedido do cliente) das marcas (Fidelidade, Allianz, DECO PROteste, Bosch, Liqui Moly, Osram, Michelin, Monroe) — ex.: material de distribuidor/oficina aderente
-- [ ] Confirmar a categoria da Bosch (está "Peças auto")
+- [ ] Confirmar autorização para os logótipos oficiais apresentados a pedido do cliente: Fidelidade, Allianz, DECO PROteste e os 27 parceiros InterGarage — ex.: material de distribuidor/oficina aderente
 - [ ] Fotografias reais da oficina, da equipa e de trabalhos feitos (para o topo e as secções)
 - [ ] Validar os textos marcados como **Novo**
 - [ ] Confirmar se abrem ao domingo ou em feriados

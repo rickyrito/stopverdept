@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 76" role="img" aria-labelledby="title desc">
+  <title id="title">InterGarage</title>
+  <desc id="desc">Logótipo InterGarage com símbolo vermelho e azul</desc>
+  <rect x="0" y="8" width="68" height="60" fill="#ef0016"/>
+  <circle cx="34" cy="38" r="25" fill="#fff"/>
+  <path d="M27 21h14v7H27zm3 10h8v24h-8z" fill="#064397"/>
+  <text x="78" y="36" fill="#064397" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800" letter-spacing="-1.8">INTER</text>
+  <text x="78" y="65" fill="#064397" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800" letter-spacing="-1.8">GARAGE</text>
+</svg>

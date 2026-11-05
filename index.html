@@ -45,6 +45,11 @@
     .brand .stop { color: #fff; }
     .brand .verde { color: var(--green); }
     .brand .sub { margin-top: 7px; color: #b3bdb5; font-size: .55rem; letter-spacing: .3em; }
+    .ig-header-badge { display: inline-flex; align-items: center; gap: 9px; margin-left: 8px; padding-left: 10px; border-left: 1px solid #ffffff25; color: #fff; text-decoration: none; }
+    .ig-header-badge:hover { color: #fff; }
+    .ig-header-copy { display: flex; flex-direction: column; gap: 2px; }
+    .ig-header-label { color: #6be083; font-size: .47rem; line-height: 1; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+    .ig-header-logo { display: block; width: 122px; height: auto; }
     .nav-right { display: flex; align-items: center; gap: 26px; }
     .nav ul { display: flex; gap: 23px; margin: 0; padding: 0; list-style: none; }
     .nav ul a { padding-block: 9px; border-bottom: 1px solid transparent; color: #d9e0d9; font-size: .8rem; font-weight: 500; text-decoration: none; white-space: nowrap; transition: color .2s, border-color .2s; }
@@ -106,11 +111,13 @@
     .about-statement { margin: 0; color: var(--black); font-size: 1.35rem; line-height: 1.65; letter-spacing: -.02em; }
     .about-statement b { color: var(--green-dark); font-weight: 500; }
     .about-text { margin: 22px 0 0; color: var(--muted); }
-    .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 65px; padding-top: 30px; border-top: 1px solid var(--line); }
-    .value { display: grid; grid-template-columns: 56px 1fr; column-gap: 20px; align-items: center; }
-    .value img { grid-row: span 2; width: 56px; height: 56px; }
-    .value h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: -.02em; }
-    .value p { margin: 3px 0 0; font-size: .85rem; color: var(--muted); }
+    .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 56px; padding: 28px 0 10px; border-top: 1px solid var(--line); }
+    .value { position: relative; display: grid; grid-template-columns: 104px 1fr; column-gap: 18px; align-items: center; min-height: 146px; overflow: hidden; padding: 18px 20px 18px 16px; border: 1px solid #dce2da; border-radius: 14px; background: linear-gradient(145deg, #fff 0%, #f0f5ee 100%); box-shadow: 0 10px 24px #1017130b; }
+    .value::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--green); }
+    .value::after { content: ""; position: absolute; right: -38px; bottom: -52px; width: 120px; height: 120px; border: 1px solid #1fbf4328; border-radius: 50%; pointer-events: none; }
+    .value img { position: relative; z-index: 1; grid-row: span 2; width: 104px; height: 104px; padding: 0; object-fit: contain; border: 0; border-radius: 0; background: transparent; filter: drop-shadow(0 5px 5px #10171318); }
+    .value h3 { position: relative; z-index: 1; font-size: 1.08rem; font-weight: 600; letter-spacing: -.02em; }
+    .value p { position: relative; z-index: 1; margin: 5px 0 0; font-size: .85rem; color: var(--muted); }
     #servicos { padding-top: 20px; }
     #servicos .head { max-width: none; padding-top: 64px; border-top: 1px solid var(--line); }
     .services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: service; }
@@ -149,9 +156,33 @@
     @keyframes blink { 50% { opacity: .2; } }
     .light .q { color: #b8c3b9; font-size: .78rem; }
     .light h3 { margin-top: 3px; color: #fff; font-size: .95rem; letter-spacing: -.015em; }
-    .light .val { margin-left: auto; color: #6be083; font-size: .8rem; white-space: nowrap; }
     .prices-note { max-width: 680px; margin: 32px auto 0; color: var(--muted); text-align: center; font-size: .85rem; }
-    .partners { display: grid; grid-template-columns: 1.15fr .85fr 1fr; gap: 36px; }
+    .network-feature { display: grid; grid-template-columns: 1.35fr .65fr; gap: 40px; padding: clamp(24px, 4vw, 48px); border: 1px solid #6be08340; border-radius: 12px; background: linear-gradient(125deg, #1fbf4314, #ffffff03); }
+    .network-copy, .network-identity { min-width: 0; }
+    .network-copy h3 { max-width: 620px; font-size: clamp(1.65rem, 3vw, 2.4rem); font-weight: 500; }
+    .network-copy p { max-width: 640px; margin: 20px 0 0; color: #bdc8bd; font-size: .95rem; }
+    .network-copy .btn { margin-top: 28px; }
+    .network-identity { display: flex; flex-direction: column; justify-content: center; gap: 22px; padding-left: 32px; border-left: 1px solid #ffffff25; }
+    .network-label { color: #6be083; font-size: .68rem; text-transform: uppercase; letter-spacing: .14em; }
+    .network-name { color: #fff; font: 600 clamp(1.8rem, 3.5vw, 2.7rem)/1.2 "Poppins", sans-serif; letter-spacing: -.045em; overflow-wrap: anywhere; }
+    .network-points { display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; color: #d9e0d9; font-size: .8rem; }
+    .network-points li { display: flex; align-items: baseline; gap: 10px; }
+    .network-points li::before { content: ""; flex: none; width: 6px; height: 6px; background: #6be083; }
+    .network-partners { margin: 36px 0 60px; }
+    .network-partners h3 { font-size: 1.1rem; font-weight: 500; }
+    .network-partners p { max-width: 750px; margin: 12px 0 22px; color: #bdc8bd; font-size: .85rem; }
+    .network-brands { display: grid; grid-template-columns: repeat(auto-fit, 124px); justify-content: space-between; gap: 8px; list-style: none; margin: 0; padding: 0; }
+    .network-brands li { min-width: 0; }
+    .network-brands a { display: flex; flex-direction: column; justify-content: space-between; width: 124px; height: 54px; padding: 6px 10px 5px; border: 1px solid #dce2da; border-radius: 4px; background: #fff; color: var(--black); text-decoration: none; transition: transform .2s, border-color .2s, box-shadow .2s; }
+    .network-brands a:hover { transform: translateY(-3px); border-color: #1fbf43; box-shadow: 0 8px 20px #10171316; }
+    .network-brands a:focus-visible { outline-color: var(--green); }
+    .network-brands img { display: block; width: 100%; height: 26px; object-fit: contain; }
+    .brand-card-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 4px; margin-top: 3px; border-top: 1px solid #edf1eb; padding-top: 3px; }
+    .brand-card-name { overflow: hidden; color: var(--black); font: 600 .48rem/1.1 "Poppins", sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+    .brand-card-url { overflow: hidden; color: var(--green-dark); font-size: .42rem; text-overflow: ellipsis; white-space: nowrap; }
+    .intergarage-logo { display: block; width: min(100%, 230px); height: auto; }
+    .network-identity .network-name-row { display: flex; align-items: center; }
+    .partners { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
     .partner { min-width: 0; padding-top: 25px; border-top: 1px solid #ffffff30; }
     .partner h3 { font-size: 1.25rem; font-weight: 500; }
     .partner p { margin: 16px 0 0; font-size: .88rem; }
@@ -160,12 +191,6 @@
     .logo-plate { display: grid; place-items: center; flex: none; width: 124px; height: 54px; padding: 10px 12px; border-radius: 4px; background: #fff; }
     .logo-plate img { width: auto; height: auto; max-width: 100%; max-height: 34px; object-fit: contain; }
     .partner-list small { color: #6be083; font-size: .68rem; }
-    .brands-title { margin: 65px 0 24px; color: #bdc8bd; font: 400 .72rem "Roboto", sans-serif; text-transform: uppercase; letter-spacing: .16em; }
-    .brands { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; list-style: none; margin: 0; padding: 0; }
-    .brand-tile { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 18px; min-width: 0; padding: 24px 18px 18px; border-radius: 5px; background: #fff; }
-    .brand-tile img { width: auto; height: 35px; max-width: 100%; object-fit: contain; }
-    .brand-tile .tall { height: 47px; }
-    .brand-cat { color: var(--muted); font-size: .65rem; }
     .logos-note { margin: 18px 0 0; color: #a8b4a9; font-size: .7rem; }
     .contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; }
     .contact-info { display: grid; grid-template-columns: 1fr 1fr; align-content: start; gap: 32px 25px; }
@@ -184,8 +209,13 @@
     .map iframe { display: block; width: 100%; height: 100%; min-height: 430px; border: 0; }
     footer { padding: 44px 0 112px; background: var(--dark); color: #a8b4a9; font-size: .75rem; }
     footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-top: 32px; border-top: 1px solid #ffffff25; }
+    .footer-brands { display: flex; align-items: center; gap: 24px; }
+    footer .brand { min-height: 32px; }
     footer .brand .sign { width: 32px; height: 32px; }
     footer .brand .name { font-size: 1.2rem; }
+    .footer-ig { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding-left: 22px; border-left: 1px solid #ffffff25; }
+    .footer-ig img { display: block; width: 150px; height: 32px; object-fit: contain; }
+    .footer-ig small { color: #6be083; font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
     footer a { text-decoration: none; }
     footer a:hover { color: #fff; }
     footer .cookie-link { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
@@ -275,7 +305,6 @@
       .hero-layout { min-height: 600px; }
       .hero h1 { font-size: clamp(3rem, 5.8vw, 5.6rem); }
       .light { flex-wrap: wrap; }
-      .light .val { margin-left: 64px; }
     }
     @media (max-width: 1080px) {
       .menu-btn { display: block; }
@@ -302,7 +331,7 @@
       .contact-info { grid-template-columns: 1fr 1fr; }
       .contact-info > div:first-child, .contact-info > div:last-child { grid-column: auto; }
       .map, .map iframe { min-height: 350px; }
-      .brand-tile { padding-inline: 12px; }
+      .network-brands { justify-content: flex-start; }
     }
     @media (max-width: 760px) {
       :root { --header-h: 76px; }
@@ -316,9 +345,9 @@
       .about-intro { grid-template-columns: 1fr; gap: 26px; }
       .about-copy { padding-top: 0; }
       .about-statement { font-size: 1.2rem; }
-      .values { gap: 24px; margin-top: 40px; }
-      .value { grid-template-columns: 1fr; }
-      .value img { grid-row: auto; margin-bottom: 16px; }
+      .values { gap: 16px; margin-top: 40px; }
+      .value { grid-template-columns: 104px 1fr; min-height: 136px; }
+      .value img { grid-row: span 2; margin: 0; }
       .value h3 { font-size: .95rem; }
       .value p { font-size: .78rem; }
       .head { margin-bottom: 36px; }
@@ -328,13 +357,17 @@
       .prices-fun { grid-template-columns: 1fr; }
       .gauge-card { max-width: 520px; width: 100%; justify-self: center; padding-top: 36px; }
       .light { flex-wrap: nowrap; }
-      .light .val { margin-left: auto; }
       .partners { grid-template-columns: 1fr; gap: 32px; }
+      .network-feature { grid-template-columns: 1fr; gap: 28px; }
+      .network-identity { padding: 24px 0 0; border-left: 0; border-top: 1px solid #ffffff25; }
+      .network-partners { margin-bottom: 44px; }
       .partner-list { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .partner-list li { flex-direction: row; align-items: center; }
-      .brands { grid-template-columns: repeat(3, minmax(0,1fr)); }
-      .brands-title { margin-top: 44px; }
+      .network-brands { justify-content: flex-start; }
       footer .wrap { flex-direction: column; align-items: flex-start; }
+      .footer-brands { flex-wrap: wrap; gap: 14px; }
+      .footer-ig { padding-left: 0; border-left: 0; }
+      .footer-ig img { width: 118px; height: 26px; }
     }
     @media (max-width: 560px) {
       :root { --header-h: 70px; }
@@ -344,6 +377,10 @@
       .brand .sign { width: 37px; height: 37px; }
       .brand .name { font-size: 1.3rem; }
       .brand .sub { font-size: .5rem; }
+      .ig-header-badge { margin-left: 8px; padding-left: 8px; }
+      .ig-header-copy { display: flex; }
+      .ig-header-label { display: none; }
+      .ig-header-logo { width: 92px; }
       .nav { gap: 10px; }
       .nav-right { gap: 5px; }
       .lang-btn { padding-inline: 9px; }
@@ -360,8 +397,8 @@
       .location-item { align-items: flex-start; }
       .eyebrow { margin-bottom: 18px; font-size: .65rem; }
       .values { grid-template-columns: 1fr; gap: 22px; }
-      .value { grid-template-columns: 48px 1fr; gap: 2px 18px; }
-      .value img { grid-row: span 2; width: 48px; height: 48px; margin: 0; }
+      .value { grid-template-columns: 76px 1fr; gap: 2px 16px; min-height: 116px; padding: 14px 14px 14px 12px; }
+      .value img { grid-row: span 2; width: 76px; height: 76px; margin: 0; }
       .value h3 { font-size: 1rem; }
       .value p { font-size: .85rem; }
       .service { padding: 22px 18px 26px 0; margin-right: 16px; }
@@ -372,11 +409,9 @@
       .band { padding-block: 40px; }
       .band h2 { font-size: 1.9rem; }
       .light { flex-wrap: wrap; gap: 12px; padding: 20px 16px; }
-      .light .val { margin-left: 58px; width: calc(100% - 58px); }
       #precos .cta { flex-direction: column; }
       .partner-list li { flex-direction: column; align-items: flex-start; }
-      .brands { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .brand-tile { padding: 24px 16px 18px; }
+      .network-brands { justify-content: flex-start; }
       .contact-info { grid-template-columns: 1fr; }
       .big-phone { font-size: 2.3rem; }
       .map, .map iframe { min-height: 320px; }
@@ -392,6 +427,7 @@
       .cm-foot { grid-template-columns: 1fr; }
     }
     @media (max-width: 360px) {
+      .network-brands { grid-template-columns: repeat(2, 124px); }
       .wrap { padding-inline: 18px; }
       .brand .name { font-size: 1.15rem; }
       .brand .sign { width: 32px; height: 32px; }
@@ -438,13 +474,16 @@
         <span class="sub" data-i18n="brand.sub">SERVIÇOS AUTO</span>
       </span>
     </a>
+    <a class="ig-header-badge" href="#parceiros" aria-label="Stopverde, oficina aderente InterGarage">
+      <span class="ig-header-copy"><span class="ig-header-label">Oficina aderente</span><img class="ig-header-logo" src="assets/intergarage.svg" alt="InterGarage" width="360" height="76"></span>
+    </a>
     <div class="nav-right">
       <ul id="menu">
         <li><a href="#inicio" data-i18n="nav.home">Início</a></li>
         <li><a href="#sobre" data-i18n="nav.about">Quem Somos</a></li>
         <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
         <li><a href="#precos" data-i18n="nav.prices">Preços</a></li>
-        <li><a href="#parceiros" data-i18n="nav.partners">Seguradoras e Fornecedores</a></li>
+        <li><a href="#parceiros" data-i18n="nav.partners">Rede e Parcerias</a></li>
         <li><a href="#contactos" data-i18n="nav.contact">Contactos</a></li>
       </ul>
       <button class="lang-btn" type="button" id="langBtn" aria-label="Switch to English" lang="en">
@@ -495,12 +534,13 @@
         <div class="about-copy">
       <p class="about-statement" data-i18n="about.statement">As mesmas caras, a mesma <b>confiança</b> e o mesmo cuidado com o seu carro. <b>Sempre ao seu lado</b>, na Pontinha.</p>
       <p class="about-text" data-i18n="about.text">Conhecemos os nossos clientes e tratamos cada carro como se fosse nosso. Profissionais especializados, um serviço de excelência e sempre o preço mais justo do mercado.</p>
+      <p class="about-text"><a href="#parceiros" data-i18n="about.network">Fazemos parte da rede de oficinas multimarcas InterGarage. Conheça a nossa rede e as suas parcerias.</a></p>
         </div>
       </div>
       <div class="values">
-        <div class="value"><img src="assets/valores/confianca.svg" alt="Aperto de mão" data-i18n-attr="alt:val.trustAlt" width="96" height="96"><h3 data-i18n="val.trust">Confiança</h3><p data-i18n="val.trustText">Trabalho transparente</p></div>
-        <div class="value"><img src="assets/valores/simpatia.svg" alt="Cara sorridente com coração" data-i18n-attr="alt:val.kindAlt" width="96" height="96"><h3 data-i18n="val.kind">Simpatia</h3><p data-i18n="val.kindText">Atendimento próximo</p></div>
-        <div class="value"><img src="assets/valores/qualidade.svg" alt="Medalha de qualidade" data-i18n-attr="alt:val.qualityAlt" width="96" height="96"><h3 data-i18n="val.quality">Qualidade</h3><p data-i18n="val.qualityText">Serviço garantido</p></div>
+        <div class="value"><img src="assets/valores/confianca-humana.png" alt="Profissionais e cliente a apertar as mãos" data-i18n-attr="alt:val.trustAlt" width="96" height="96"><h3 data-i18n="val.trust">Confiança</h3><p data-i18n="val.trustText">Explicamos cada trabalho e orçamento com clareza.</p></div>
+        <div class="value"><img src="assets/valores/simpatia-humana.png" alt="Profissional sorridente a receber um cliente" data-i18n-attr="alt:val.kindAlt" width="96" height="96"><h3 data-i18n="val.kind">Simpatia</h3><p data-i18n="val.kindText">Tratamos cada cliente com atenção e proximidade.</p></div>
+        <div class="value"><img src="assets/valores/qualidade-humana.png" alt="Profissional a verificar uma peça automóvel" data-i18n-attr="alt:val.qualityAlt" width="96" height="96"><h3 data-i18n="val.quality">Qualidade</h3><p data-i18n="val.qualityText">Aplicamos conhecimento técnico e peças de confiança.</p></div>
       </div>
     </div>
   </section>
@@ -598,17 +638,14 @@
           <div class="light" style="--c:#f5b800; --g:rgba(245,184,0,.45)">
             <div class="lamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h9l3 3h3l4-3-4 7H6a3 3 0 0 1-3-3z"/><path d="M7 11V8h4"/><path d="M21 15.5c0 .8-.5 1.5-1 1.5"/></svg></div>
             <div><div class="q" data-i18n="pr.oilQ">A luz do óleo acendeu?</div><h3 data-i18n="pr.oil">Mudanças de óleo</h3></div>
-            <span class="val" data-i18n="pr.ask">Sob consulta</span>
           </div>
           <div class="light" style="--c:#ff8a00; --g:rgba(255,138,0,.45)">
             <div class="lamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
             <div><div class="q" data-i18n="pr.svcQ">Chegou a hora da revisão?</div><h3 data-i18n="pr.svc">Revisões</h3></div>
-            <span class="val" data-i18n="pr.ask">Sob consulta</span>
           </div>
           <div class="light" style="--c:#1fbf43; --g:rgba(31,191,67,.45)">
             <div class="lamp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></svg></div>
             <div><div class="q" data-i18n="pr.labQ">Quanto custa uma hora connosco?</div><h3 data-i18n="pr.lab">Mão de obra / hora</h3></div>
-            <span class="val" data-i18n="pr.ask">Sob consulta</span>
           </div>
         </div>
       </div>
@@ -624,8 +661,58 @@
     <div class="wrap">
       <div class="head">
         <div class="eyebrow" data-i18n="pa.eyebrow">Rede</div>
-        <h2 data-i18n="pa.title">Seguradoras e fornecedores</h2>
+        <h2 data-i18n="pa.title">Rede e parcerias</h2>
         <div class="bar"></div>
+      </div>
+      <div class="network-feature">
+        <div class="network-copy">
+          <h3 data-i18n="ig.title">A Stopverde faz parte da rede InterGarage</h3>
+          <p data-i18n="ig.text">A InterGarage é uma rede de oficinas multimarcas dedicada à manutenção e reparação automóvel. A rede aposta na formação dos profissionais, em procedimentos técnicos atualizados e em peças de qualidade.</p>
+          <p data-i18n="ig.local">Na Pontinha, encontra a Stopverde como oficina aderente: o atendimento próximo da sua oficina, integrado numa rede de profissionais do setor automóvel.</p>
+          <a class="btn btn-outline" href="https://www.intergarage.pt/" target="_blank" rel="noopener noreferrer" data-i18n="ig.link">Conhecer a InterGarage</a>
+        </div>
+        <div class="network-identity">
+          <span class="network-label" data-i18n="ig.member">Oficina aderente</span>
+          <div class="network-name-row"><img class="intergarage-logo" src="assets/intergarage.svg" alt="InterGarage" width="360" height="76"></div>
+          <ul class="network-points">
+            <li data-i18n="ig.multibrand">Manutenção multimarcas</li>
+            <li data-i18n="ig.training">Formação e conhecimento técnico</li>
+            <li data-i18n="ig.parts">Peças de qualidade</li>
+          </ul>
+        </div>
+      </div>
+      <div class="network-partners">
+        <h3 data-i18n="ig.partners">Parceiros InterGarage</h3>
+        <p data-i18n="ig.partnersText">A rede apresenta estas marcas entre os seus parceiros de peças e produtos automóveis. Para saber quais as soluções disponíveis para o seu carro na Stopverde, fale connosco.</p>
+        <ul class="network-brands">
+          <li><a href="https://www.aplustyres.com/" target="_blank" rel="noopener noreferrer" aria-label="APLUS — aplustyres.com"><img src="assets/marcas/intergarage/aplus.png" alt="APLUS" width="400" height="200" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">APLUS</strong><small class="brand-card-url">aplustyres.com</small></span></a></li>
+          <li><a href="https://www.blue-print.com/" target="_blank" rel="noopener noreferrer" aria-label="Blue Print — blue-print.com"><img src="assets/marcas/intergarage/blue-print.png" alt="Blue Print" width="110" height="122" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Blue Print</strong><small class="brand-card-url">blue-print.com</small></span></a></li>
+          <li><a href="https://www.boschaftermarket.com/" target="_blank" rel="noopener noreferrer" aria-label="Bosch — boschaftermarket.com"><img src="assets/marcas/intergarage/bosch.png" alt="Bosch" width="138" height="31" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Bosch</strong><small class="brand-card-url">boschaftermarket.com</small></span></a></li>
+          <li><a href="https://www.delphiautoparts.com/" target="_blank" rel="noopener noreferrer" aria-label="Delphi — delphiautoparts.com"><img src="assets/marcas/intergarage/delphi.png" alt="Delphi" width="771" height="297" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Delphi</strong><small class="brand-card-url">delphiautoparts.com</small></span></a></li>
+          <li><a href="https://www.dels.com/" target="_blank" rel="noopener noreferrer" aria-label="DELS — dels.com"><img src="assets/marcas/intergarage/dels.png" alt="DELS" width="322" height="97" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">DELS</strong><small class="brand-card-url">dels.com</small></span></a></li>
+          <li><a href="https://lubricants.totalenergies.com/" target="_blank" rel="noopener noreferrer" aria-label="ELF — lubricants.totalenergies.com"><img src="assets/marcas/intergarage/elf.png" alt="ELF" width="152" height="61" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">ELF</strong><small class="brand-card-url">lubricants.totalenergies.com</small></span></a></li>
+          <li><a href="https://www.gates.com/" target="_blank" rel="noopener noreferrer" aria-label="Gates — gates.com"><img src="assets/marcas/intergarage/gates.png" alt="Gates" width="178" height="101" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Gates</strong><small class="brand-card-url">gates.com</small></span></a></li>
+          <li><a href="https://www.geimex.net/" target="_blank" rel="noopener noreferrer" aria-label="Geimex — geimex.net"><img src="assets/marcas/intergarage/geimex.png" alt="Geimex" width="256" height="76" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Geimex</strong><small class="brand-card-url">geimex.net</small></span></a></li>
+          <li><a href="https://www.iada.es/" target="_blank" rel="noopener noreferrer" aria-label="IADA — iada.es"><img src="assets/marcas/intergarage/iada.png" alt="IADA" width="512" height="158" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">IADA</strong><small class="brand-card-url">iada.es</small></span></a></li>
+          <li><a href="https://www.mann-filter.com/" target="_blank" rel="noopener noreferrer" aria-label="MANN-FILTER — mann-filter.com"><img src="assets/marcas/intergarage/mann-filter.png" alt="MANN-FILTER" width="166" height="79" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">MANN-FILTER</strong><small class="brand-card-url">mann-filter.com</small></span></a></li>
+          <li><a href="https://mannol.de/" target="_blank" rel="noopener noreferrer" aria-label="MANNOL — mannol.de"><img src="assets/marcas/intergarage/mannol.png" alt="MANNOL" width="164" height="61" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">MANNOL</strong><small class="brand-card-url">mannol.de</small></span></a></li>
+          <li><a href="https://catalogue.mecafilter.com/" target="_blank" rel="noopener noreferrer" aria-label="Mecafilter — catalogue.mecafilter.com"><img src="assets/marcas/intergarage/mecafilter.png" alt="Mecafilter" width="229" height="44" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Mecafilter</strong><small class="brand-card-url">mecafilter.com</small></span></a></li>
+          <li><a href="https://www.napaautoparts.es/" target="_blank" rel="noopener noreferrer" aria-label="NAPA — napaautoparts.es"><img src="assets/marcas/intergarage/napa.jpg" alt="NAPA" width="1920" height="1695" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">NAPA</strong><small class="brand-card-url">napaautoparts.es</small></span></a></li>
+          <li><a href="https://www.nrf.eu/" target="_blank" rel="noopener noreferrer" aria-label="NRF — nrf.eu"><img src="assets/marcas/intergarage/nrf.png" alt="NRF" width="260" height="260" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">NRF</strong><small class="brand-card-url">nrf.eu</small></span></a></li>
+          <li><a href="https://purflux.com/" target="_blank" rel="noopener noreferrer" aria-label="Purflux — purflux.com"><img src="assets/marcas/intergarage/purflux.png" alt="Purflux" width="298" height="85" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Purflux</strong><small class="brand-card-url">purflux.com</small></span></a></li>
+          <li><a href="https://www.schaeffler-aftermarket.com/" target="_blank" rel="noopener noreferrer" aria-label="Schaeffler Group — schaeffler-aftermarket.com"><img src="assets/marcas/intergarage/schaeffler-group.png" alt="Schaeffler Group" width="318" height="144" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Schaeffler Group</strong><small class="brand-card-url">schaeffler-aftermarket.com</small></span></a></li>
+          <li><a href="https://www.shell.com/business-customers/lubricants-for-business.html" target="_blank" rel="noopener noreferrer" aria-label="Shell — shell.com"><img src="assets/marcas/intergarage/shell.png" alt="Shell" width="128" height="118" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Shell</strong><small class="brand-card-url">shell.com</small></span></a></li>
+          <li><a href="https://www.skf.com/" target="_blank" rel="noopener noreferrer" aria-label="SKF — skf.com"><img src="assets/marcas/intergarage/skf.png" alt="SKF" width="159" height="38" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">SKF</strong><small class="brand-card-url">skf.com</small></span></a></li>
+          <li><a href="https://www.swag.de/" target="_blank" rel="noopener noreferrer" aria-label="SWAG — swag.de"><img src="assets/marcas/intergarage/swag.jpg" alt="SWAG" width="142" height="53" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">SWAG</strong><small class="brand-card-url">swag.de</small></span></a></li>
+          <li><a href="https://www.tabspain.com/" target="_blank" rel="noopener noreferrer" aria-label="TAB — tabspain.com"><img src="assets/marcas/intergarage/tab.png" alt="TAB" width="214" height="108" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">TAB</strong><small class="brand-card-url">tabspain.com</small></span></a></li>
+          <li><a href="https://totalenergies.com/" target="_blank" rel="noopener noreferrer" aria-label="Total Lubricants — totalenergies.com"><img src="assets/marcas/intergarage/total-lubricants.png" alt="Total Lubricants" width="94" height="122" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Total Lubricants</strong><small class="brand-card-url">totalenergies.com</small></span></a></li>
+          <li><a href="https://www.trwaftermarket.com/" target="_blank" rel="noopener noreferrer" aria-label="TRW — trwaftermarket.com"><img src="assets/marcas/intergarage/trw.png" alt="TRW" width="289" height="88" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">TRW</strong><small class="brand-card-url">trwaftermarket.com</small></span></a></li>
+          <li><a href="https://www.valeo.com/" target="_blank" rel="noopener noreferrer" aria-label="Valeo — valeo.com"><img src="assets/marcas/intergarage/valeo.png" alt="Valeo" width="194" height="84" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Valeo</strong><small class="brand-card-url">valeo.com</small></span></a></li>
+          <li><a href="https://www.valvolineglobal.com/" target="_blank" rel="noopener noreferrer" aria-label="Valvoline — valvolineglobal.com"><img src="assets/marcas/intergarage/valvoline.png" alt="Valvoline" width="2706" height="442" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Valvoline</strong><small class="brand-card-url">valvolineglobal.com</small></span></a></li>
+          <li><a href="https://veneporte.pai.pt/en" target="_blank" rel="noopener noreferrer" aria-label="Veneporte — veneporte.pai.pt"><img src="assets/marcas/intergarage/veneporte-recambios.png" alt="Veneporte" width="618" height="155" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Veneporte</strong><small class="brand-card-url">veneporte.pai.pt</small></span></a></li>
+          <li><a href="https://www.wolflubes.com/" target="_blank" rel="noopener noreferrer" aria-label="Wolf — wolflubes.com"><img src="assets/marcas/intergarage/wolf.png" alt="Wolf" width="222" height="106" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">Wolf</strong><small class="brand-card-url">wolflubes.com</small></span></a></li>
+          <li><a href="https://aftermarket.zf.com/" target="_blank" rel="noopener noreferrer" aria-label="ZF — aftermarket.zf.com"><img src="assets/marcas/intergarage/zf.png" alt="ZF" width="282" height="80" loading="lazy"><span class="brand-card-meta"><strong class="brand-card-name">ZF</strong><small class="brand-card-url">aftermarket.zf.com</small></span></a></li>
+        </ul>
       </div>
       <div class="partners">
         <div class="partner">
@@ -643,10 +730,6 @@
           </ul>
         </div>
         <div class="partner">
-          <h3 data-i18n="pa.sup">Fornecedores</h3>
-          <p data-i18n="pa.supText">Peças, óleos, pneus e iluminação de marcas em que confiamos — veja abaixo.</p>
-        </div>
-        <div class="partner">
           <h3 data-i18n="pa.part">Parcerias</h3>
           <p data-i18n="pa.partText">Empresas e entidades parceiras da Stopverde.</p>
           <ul class="partner-list">
@@ -654,18 +737,14 @@
               <span class="logo-plate"><img src="assets/marcas/deco.svg" alt="DECO PROteste" width="416" height="89" loading="lazy"></span>
               <small data-i18n="pa.decoCat">Defesa do consumidor</small>
             </li>
+            <li>
+              <a class="logo-plate" href="https://www.acp.pt/inicio" target="_blank" rel="noopener noreferrer" aria-label="ACP Automóvel Club de Portugal — acp.pt"><img src="assets/marcas/acp.svg" alt="ACP Automóvel Club de Portugal" width="84" height="84" loading="lazy"></a>
+              <small>Clube automóvel</small>
+            </li>
           </ul>
         </div>
       </div>
 
-      <h3 class="brands-title" data-i18n="pa.brands">Marcas com que trabalhamos</h3>
-      <ul class="brands">
-        <li class="brand-tile"><img src="assets/marcas/bosch.svg" alt="Bosch" width="433" height="97" loading="lazy"><span class="brand-cat" data-i18n="br.bosch">Peças auto</span></li>
-        <li class="brand-tile"><img class="tall" src="assets/marcas/liquimoly.svg" alt="Liqui Moly" width="568" height="371" loading="lazy"><span class="brand-cat" data-i18n="br.oil">Óleos</span></li>
-        <li class="brand-tile"><img src="assets/marcas/osram.svg" alt="Osram" width="744" height="193" loading="lazy"><span class="brand-cat" data-i18n="br.light">Iluminação</span></li>
-        <li class="brand-tile"><img src="assets/marcas/michelin.svg" alt="Michelin" width="1000" height="101" loading="lazy"><span class="brand-cat" data-i18n="br.tyres">Pneus</span></li>
-        <li class="brand-tile"><img src="assets/marcas/monroe.png" alt="Monroe" width="771" height="124" loading="lazy"><span class="brand-cat" data-i18n="br.shocks">Amortecedores</span></li>
-      </ul>
       <p class="logos-note" data-i18n="pa.logosNote">Os logótipos são marcas registadas dos respetivos proprietários.</p>
     </div>
   </section>
@@ -722,7 +801,10 @@
 
 <footer>
   <div class="wrap">
-    <span class="brand"><img class="sign" src="assets/stopverde.svg" alt="" width="36" height="36"><span class="name"><span class="stop">STOP</span><span class="verde">VERDE</span></span></span>
+    <span class="footer-brands">
+      <span class="brand"><img class="sign" src="assets/stopverde.svg" alt="" width="36" height="36"><span class="name"><span class="stop">STOP</span><span class="verde">VERDE</span></span></span>
+      <a class="footer-ig" href="#parceiros" aria-label="Oficina aderente InterGarage"><small>Oficina aderente</small><img src="assets/intergarage.svg" alt="InterGarage" width="150" height="32"></a>
+    </span>
     <span>© <span id="year"></span> Stopverde, Lda. · Av. de São Pedro, Lote R-7 Loja A, Pontinha · <a href="tel:+351214794122">214 794 122</a> · <button type="button" class="cookie-link" id="cookiePrefs" data-i18n="ck.footer">Preferências de cookies</button></span>
   </div>
 </footer>
@@ -842,7 +924,7 @@
     'tb.hours': '· Mon–Fri 8:30–18:30 · Sat 9:00–13:00',
     'brand.sub': 'CAR SERVICES',
     'nav.home': 'Home', 'nav.about': 'About us', 'nav.services': 'Services', 'nav.prices': 'Prices',
-    'nav.partners': 'Insurers &amp; Suppliers', 'nav.contact': 'Contact', 'nav.open': 'Open menu', 'nav.close': 'Close menu',
+    'nav.partners': 'Network &amp; Partners', 'nav.contact': 'Contact', 'nav.open': 'Open menu', 'nav.close': 'Close menu',
     'hero.signAlt': 'Stopverde symbol: a green STOP sign',
     'hero.eyebrow': 'Multi-brand Garage · Pontinha',
     'hero.title': 'Your car in <span>good hands.</span>',
@@ -854,9 +936,10 @@
     'about.title': 'Your trusted local garage',
     'about.statement': 'The same faces, the same <b>trust</b> and the same care for your car. <b>Always by your side</b>, in Pontinha.',
     'about.text': 'We know our customers and treat every car as if it were our own. Skilled professionals, excellent service and always the fairest price around.',
-    'val.trust': 'Trust', 'val.trustText': 'Transparent work', 'val.trustAlt': 'Handshake',
-    'val.kind': 'Friendliness', 'val.kindText': 'Personal service', 'val.kindAlt': 'Smiling face with a heart',
-    'val.quality': 'Quality', 'val.qualityText': 'Guaranteed service', 'val.qualityAlt': 'Quality medal',
+    'about.network': 'We are part of the InterGarage network of multi-brand garages. Discover our network and its partners.',
+    'val.trust': 'Trust', 'val.trustText': 'We explain every job and quote clearly.', 'val.trustAlt': 'Professionals and customer shaking hands',
+    'val.kind': 'Friendliness', 'val.kindText': 'We treat every customer with care and attention.', 'val.kindAlt': 'Smiling professional welcoming a customer',
+    'val.quality': 'Quality', 'val.qualityText': 'Skilled work and dependable parts.', 'val.qualityAlt': 'Professional inspecting a car component',
     'srv.eyebrow': 'What we do', 'srv.title': 'Our services',
     'srv.1': 'General Servicing', 'srv.1t': 'Scheduled maintenance for every make.',
     'srv.2': 'Bodywork &amp; Paint', 'srv.2t': 'Body repairs and paintwork.',
@@ -877,16 +960,19 @@
     'pr.oilQ': 'Oil light on?', 'pr.oil': 'Oil changes',
     'pr.svcQ': 'Time for a service?', 'pr.svc': 'Servicing',
     'pr.labQ': 'What does an hour with us cost?', 'pr.lab': 'Labour / hour',
-    'pr.ask': 'On request',
     'pr.note': 'Prices depend on the model and condition of your car. Tell us which one and we\'ll give you the right figure.',
     'pr.wa': 'Get a quote on WhatsApp', 'pr.call': 'Call 214 794 122',
-    'pa.eyebrow': 'Network', 'pa.title': 'Insurers &amp; suppliers',
+    'pa.eyebrow': 'Network', 'pa.title': 'Network &amp; partners',
+    'ig.title': 'Stopverde is part of the InterGarage network',
+    'ig.text': 'InterGarage is a network of multi-brand garages providing vehicle maintenance and repairs. The network focuses on professional training, up-to-date technical procedures and quality parts.',
+    'ig.local': 'In Pontinha, Stopverde is a member garage: personal service from your local garage, within a network of automotive professionals.',
+    'ig.link': 'Discover InterGarage', 'ig.member': 'Member garage',
+    'ig.multibrand': 'Multi-brand maintenance', 'ig.training': 'Training and technical knowledge', 'ig.parts': 'Quality parts',
+    'ig.partners': 'InterGarage partners',
+    'ig.partnersText': 'The network lists these brands among its automotive parts and product partners. Contact Stopverde to find out which options are available for your car.',
     'pa.ins': 'Insurers', 'pa.insText': 'The insurers we work with.', 'pa.insCat': 'Insurance', 'pa.insCatAuto': 'Car insurance',
-    'pa.sup': 'Suppliers', 'pa.supText': 'Parts, oils, tyres and lighting from brands we trust — see below.',
     'pa.part': 'Partnerships', 'pa.partText': 'Companies and organisations that partner with Stopverde.', 'pa.decoCat': 'Consumer protection',
-    'pa.brands': 'Brands we work with',
     'pa.logosNote': 'Logos are registered trademarks of their respective owners.',
-    'br.bosch': 'Car parts', 'br.oil': 'Oils', 'br.light': 'Lighting', 'br.tyres': 'Tyres', 'br.shocks': 'Shock absorbers',
     'ct.eyebrow': 'Get in touch', 'ct.title': 'Contact',
     'ct.phone': 'Phone', 'ct.mobile': 'Mobile / WhatsApp:', 'ct.send': 'Send a message',
     'ct.address': 'Address', 'ct.email': 'Email &amp; social', 'ct.hours': 'Opening hours',

@@ -1,0 +1,191 @@
+﻿[
+    {
+        "name":  "APLUS",
+        "file":  "assets/marcas/intergarage/aplus.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/ba47c497-472f-4117-9ce8-a643927a03f2_1769004093.png?v=178",
+        "width":  400,
+        "height":  200
+    },
+    {
+        "name":  "BLUE PRINT",
+        "file":  "assets/marcas/intergarage/blue-print.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/ed67a426-56e4-480f-b31e-acfb80fd3f66_1769004093.png?v=178",
+        "width":  110,
+        "height":  122
+    },
+    {
+        "name":  "Bosch",
+        "file":  "assets/marcas/intergarage/bosch.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_Grupo_15695%402x_1715695665_1718196983.png?v=178",
+        "width":  138,
+        "height":  31
+    },
+    {
+        "name":  "Delphi",
+        "file":  "assets/marcas/intergarage/delphi.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_DELPHI_1715682431_1718196984.png?v=178",
+        "width":  771,
+        "height":  297
+    },
+    {
+        "name":  "DELS",
+        "file":  "assets/marcas/intergarage/dels.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/35bb7303-3cd2-4221-a860-8569927d4646_1769004092.png?v=178",
+        "width":  322,
+        "height":  97
+    },
+    {
+        "name":  "ELF",
+        "file":  "assets/marcas/intergarage/elf.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/fcd15a8a-e40e-4427-9d69-d476c18b6e04_1769004093.png?v=178",
+        "width":  152,
+        "height":  61
+    },
+    {
+        "name":  "Gates",
+        "file":  "assets/marcas/intergarage/gates.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_gates_logo_mark_digital_white%402x_1715679743_1718196984.png?v=178",
+        "width":  178,
+        "height":  101
+    },
+    {
+        "name":  "Geimex",
+        "file":  "assets/marcas/intergarage/geimex.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_geimex%402x_1715679743_1718196984.png?v=178",
+        "width":  256,
+        "height":  76
+    },
+    {
+        "name":  "IADA",
+        "file":  "assets/marcas/intergarage/iada.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/2b7328d4-ec4f-47fb-82b6-da3e7132ef12_1769004092.png?v=178",
+        "width":  512,
+        "height":  158
+    },
+    {
+        "name":  "MANN FILTER",
+        "file":  "assets/marcas/intergarage/mann-filter.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_LogoMANFILTER%402x_1715697658_1718205596.png?v=178",
+        "width":  166,
+        "height":  79
+    },
+    {
+        "name":  "MANNOL",
+        "file":  "assets/marcas/intergarage/mannol.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/fb986527-304a-4d69-83b6-dcb6883b087d_1769004093.png?v=178",
+        "width":  164,
+        "height":  61
+    },
+    {
+        "name":  "MECAFILTER",
+        "file":  "assets/marcas/intergarage/mecafilter.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_mecafilter_1718202529.png?v=178",
+        "width":  229,
+        "height":  44
+    },
+    {
+        "name":  "NAPA",
+        "file":  "assets/marcas/intergarage/napa.jpg",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/97d08c36-96c1-4e7c-8ddd-792ebbacd9e0_1769004092.jpg?v=178",
+        "width":  1920,
+        "height":  1695
+    },
+    {
+        "name":  "NRF",
+        "file":  "assets/marcas/intergarage/nrf.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_9sawbtnz%402x_1715679743_1718196984.png?v=178",
+        "width":  260,
+        "height":  260
+    },
+    {
+        "name":  "PURFLUX",
+        "file":  "assets/marcas/intergarage/purflux.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_purflux1_1718202529.png?v=178",
+        "width":  298,
+        "height":  85
+    },
+    {
+        "name":  "SCHAEFFLER GROUP",
+        "file":  "assets/marcas/intergarage/schaeffler-group.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/42c51d48-a41c-4e76-9efa-d9844568d0c6_1769004093.png?v=178",
+        "width":  318,
+        "height":  144
+    },
+    {
+        "name":  "Shell",
+        "file":  "assets/marcas/intergarage/shell.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_shell-seeklogo.com%402x_1715679743_1718196984.png?v=178",
+        "width":  128,
+        "height":  118
+    },
+    {
+        "name":  "SKF",
+        "file":  "assets/marcas/intergarage/skf.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_LogoSKF%402x_1715757437_1718196984.png?v=178",
+        "width":  159,
+        "height":  38
+    },
+    {
+        "name":  "SWAG",
+        "file":  "assets/marcas/intergarage/swag.jpg",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/51a1da4c-346b-4007-a37e-6f8b6d6c66d4_1769004092.jpg?v=178",
+        "width":  142,
+        "height":  53
+    },
+    {
+        "name":  "TAB",
+        "file":  "assets/marcas/intergarage/tab.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_logo-tab-header%402x_1715679905_1718196984.png?v=178",
+        "width":  214,
+        "height":  108
+    },
+    {
+        "name":  "TOTAL LUBRICANTS",
+        "file":  "assets/marcas/intergarage/total-lubricants.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/bd202cbe-5f82-4408-a903-225587e2fe92_1769004093.png?v=178",
+        "width":  94,
+        "height":  122
+    },
+    {
+        "name":  "TRW",
+        "file":  "assets/marcas/intergarage/trw.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_trw_1718203318.png?v=178",
+        "width":  289,
+        "height":  88
+    },
+    {
+        "name":  "Valeo",
+        "file":  "assets/marcas/intergarage/valeo.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_layer1%402x_1715679905_1718196983.png?v=178",
+        "width":  194,
+        "height":  84
+    },
+    {
+        "name":  "VALVOLINE",
+        "file":  "assets/marcas/intergarage/valvoline.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/a4f29a4b-e71f-4905-bd3e-d97fd8047992_1769004093.png?v=178",
+        "width":  2706,
+        "height":  442
+    },
+    {
+        "name":  "Veneporte recambios",
+        "file":  "assets/marcas/intergarage/veneporte-recambios.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/018e8724-edce-4a80-8911-28b564edc3ab_1769004092.png?v=178",
+        "width":  618,
+        "height":  155
+    },
+    {
+        "name":  "Wolf",
+        "file":  "assets/marcas/intergarage/wolf.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_wlf_log%402x_1715679905_1718196984.png?v=178",
+        "width":  222,
+        "height":  106
+    },
+    {
+        "name":  "zf",
+        "file":  "assets/marcas/intergarage/zf.png",
+        "source":  "https://cms-gauib.s3.eu-central-1.amazonaws.com/proveedores/intergarage_ZFA_IAM_MAIN_LOGOcombination_LF-SX-TRW_left_small_4c_201711_UN%402x_1715757437_1718196984.png?v=178",
+        "width":  282,
+        "height":  80
+    }
+]
